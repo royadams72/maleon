@@ -1,0 +1,52 @@
+
+
+<div class="container-fluid" style="width:100%;" >
+  <nav class="navbar navbar-inverse navbar-fixed-top" #nav [@servicesState]="navActiveState">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/shared/logo1.png" alt="Ma'Leon &amp; Co"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav" id='navbar-ul' [@ulState]="defaultUlState">
+            <li class="nav-item page-scroll">
+                <a pageScroll [@activeState]="servicesActive" [pageScrollAdjustHash]='true'  [pageScrollDuration]="700" class="nav-link"  href="#services">Services</a>
+
+            </li>
+            <li class="nav-item page-scroll">
+                <a class="nav-link" [@activeState]="contactActive" pageScroll [pageScrollAdjustHash]='true' [pageScrollDuration]="700" href="#contact">Contact</a>
+
+            </li>
+            <li class="nav-item page-scroll nav-last">
+                <a pageScroll [@activeState]="socialActive" [pageScrollAdjustHash]='true' [pageScrollDuration]="700" class="nav-link"  href="#social">Social</a>
+
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav" id='navbar-ul-services' [@ulState]="servicesUlState">
+            <li class="nav-item s-link" >
+                <a routerLinkActive="'is-active'" [routerLink]="['']" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/taxation']" routerLinkActive="'is-active'" class="nav-link">Taxation</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/accountancy']" class="nav-link" routerLinkActive="'is-active'">Accountancy</a>
+            </li>
+            <li class="nav-item nav-last">
+                <a [routerLink]="['/consultancy']" routerLinkActive="'is-active'" class="nav-link">Consultancy</a>
+            </li>
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+      </div>

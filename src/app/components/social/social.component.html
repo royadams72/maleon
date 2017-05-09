@@ -1,0 +1,27 @@
+<!-- [style.height.px]="winHeight"-->
+<div id="social" #social>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>Social</h2>
+            <div class="col-md-4 outer-card" *ngFor="let tweet of tweetsArray">
+              <div class="card row">
+                  <div class="card-image col-md-3">
+                    <img  src={{tweet.user.profile_image_url}} class="" alt="">
+                </div>
+                <div class="right-content col-md-9">
+                  <span class="card-title">{{tweet.user.name}}</span>
+                  <div class="card-content">
+                    <p [innerHTML]="tweet.text"></p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">This is a link</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+</div>
