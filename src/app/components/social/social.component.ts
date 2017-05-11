@@ -17,18 +17,20 @@ export class SocialComponent implements OnInit, OnDestroy, AfterViewInit{
   constructor(private soService: SocialService, private renderer: Renderer2, private heightsService: HeightsService) { }
 
   ngAfterViewInit(){
-
   // console.log("social= "+this.socialDiv.nativeElement.offsetTop)
   this.heightsService.updateObj("social", this.socialDiv.nativeElement.offsetTop);
-
   }
-
+//https://twitter.com/intent/retweet?tweet_id
   ngOnInit() {
     this.conn = this.soService.initTwitter()
     .subscribe(tweets=>{
-      for (let i = 0; i < tweets.length; i++){
-        tweets[i].text = linkifyHtml(tweets[i].text);
-        this.tweetsArray.push(tweets[i]);
+
+      for(let i = 0; i < tweets.length; i++){
+        
+        if(tweets[i].text){
+          tweets[i].text = linkifyHtml(tweets[i].text)
+            this.tweetsArray.push(tweets[i]);
+        }
       }
     });
 

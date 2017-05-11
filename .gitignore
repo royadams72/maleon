@@ -13,6 +13,7 @@ log.txt
 npm-debug.log*
 node_modules
 server/node_modules
+server/.env
 $RECYCLE.BIN/
 
 .DS_Store

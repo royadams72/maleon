@@ -4,30 +4,22 @@ import { Observable } from "rxjs";
 import 'rxjs/Rx';
 @Injectable()
 export class SocialService {
-  private searchQuery:string;
-  private headers = new Headers();
 
-  constructor(private http: Http) {
-      this.headers.append('Content-Type', 'application/X-www-form-urlencoded');
-  }
+  private url = 'https://maleonserver.herokuapp.com/';
+  constructor(private http: Http) { }
 
   initTwitter(){
-    return this.http.post('http://localhost:3000/authorise', {headers: this.headers})
-    .map((response: Response) => {
-    //  console.log(response.json());
-      return response.json();
-    })
-    .mergeMap((data) =>{
-    //  console.log(data.success)
-      var searchTerm = 'query=TAX'//+ this.searchQuery
-      return this.http.post('http://localhost:3000/search', searchTerm ,{headers: this.headers})
-    })
-    .map((data)=>{
-    return data.json().data.statuses;
-  }).catch((error) => {
-    //console.log(error.json().error)
-   return Observable.throw(error.json().error || 'Server error');
-  })
+    console.log("initTwitter")
+    var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+    return this.http.get(this.url+'gettweets', {headers: headers})
+        .map((response: Response) => {
+        console.log(response.json());
+          return response.json();
+        })
+        .catch((error: Response) =>  Observable.throw(error.json()) )
+
   }
 
   private handleError(error:any){

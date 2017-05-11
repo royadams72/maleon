@@ -2,26 +2,44 @@
 <div id="social" #social>
 <div class="container">
     <div class="row">
-        <div class="col-md-12 text-center">
+
           <h2>Social</h2>
-            <div class="col-md-4 outer-card" *ngFor="let tweet of tweetsArray">
-              <div class="card row">
-                  <div class="card-image col-md-3">
+          <h3>Recent Tweets</h3>
+            <div class="col-md-4 outer-status" *ngFor="let tweet of tweetsArray">
+              <div class="row status">
+                  <div class="status-image col-xs-3">
                     <img  src={{tweet.user.profile_image_url}} class="" alt="">
                 </div>
-                <div class="right-content col-md-9">
+                <div class="right-content col-xs-9">
                   <span class="card-title">{{tweet.user.name}}</span>
                   <div class="card-content">
                     <p [innerHTML]="tweet.text"></p>
                   </div>
                   <div class="card-action">
-                    <a href="#">This is a link</a>
-                  </div>
+                    <a href="https://twitter.com/intent/retweet?tweet_id={{tweet.id_str}}" target="_blank" class="retweet">Retweet</a>
+                    </div>
                 </div>
               </div>
             </div>
-        </div>
+
     </div>
+    <div class="row social-btns">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-4">
+        <div class="row">
+
+          <div class="col-xs-4 col-sm-3 col-md-2">
+          <img src="assets/shared/facebookIcon.png" class="img-responsive" alt="Connect on Facebook">
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+          <a href="https://twitter.com/MaLeonandco" target="_blank"><img src="assets/shared/twitterIcon.png" class="img-responsive" alt="Connect on Twitter"></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+          <img src="assets/shared/linkedInIcon.png" class="img-responsive" alt="Connect on LinkedIn">
+        </div>
+      </div>
+    </div>
+    </div>
+
 </div>
 <!---->
 </div>
