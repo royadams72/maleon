@@ -6,7 +6,7 @@ var path = require('path');
 var twit = require('twitter');
 var app = express();
 var port = process.env.PORT || 3000;
-//require('dotenv').config()
+require('dotenv').config()
 app.set('port', (port));
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
