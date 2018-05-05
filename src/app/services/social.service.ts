@@ -5,15 +5,15 @@ import 'rxjs/Rx';
 @Injectable()
 export class SocialService {
 
-  private url = 'https://maleonserver.herokuapp.com/';
+  private url = 'https://maleonserver.herokuapp.com/';//http://localhost:3000/
   constructor(private http: Http) { }
 
   initTwitter(){
-    console.log("initTwitter")
+  //  console.log("initTwitter")
     var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-    return this.http.get(this.url+'gettweets', {headers: headers})
+    return this.http.get(this.url+'twitter/gettweets', {headers: headers})
         .map((response: Response) => {
         console.log(response.json());
           return response.json();

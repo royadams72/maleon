@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy, Output, Renderer2, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { HeightsService } from '../../shared.services/heights.service';
-import {SocialService} from './social.service';
+import { DivPositionsService } from '../../services/div-positions.service';
+import {SocialService} from '../../services/social.service';
 import * as linkify from 'linkifyjs';
-import linkifyHtml from 'linkifyjs/html';
+import * as linkifyHtml from 'linkifyjs/html';
 
 @Component({
   selector: 'app-social',
@@ -12,30 +12,37 @@ import linkifyHtml from 'linkifyjs/html';
 export class SocialComponent implements OnInit, OnDestroy, AfterViewInit{
   @ViewChild('social') socialDiv: ElementRef;
   private conn: any;
-  private tweetsArray:Array<any> = [];
+  public tweetsArray:Array<any> = [];
 
-  constructor(private soService: SocialService, private renderer: Renderer2, private heightsService: HeightsService) { }
+  constructor(private soService: SocialService, private renderer: Renderer2, private divPosService: DivPositionsService) { }
 
   ngAfterViewInit(){
   // console.log("social= "+this.socialDiv.nativeElement.offsetTop)
-  this.heightsService.updateObj("social", this.socialDiv.nativeElement.offsetTop);
+  this.divPosService.updateObj("social", this.socialDiv.nativeElement.offsetTop);
   }
-//https://twitter.com/intent/retweet?tweet_id
+
   ngOnInit() {
     this.conn = this.soService.initTwitter()
     .subscribe(tweets=>{
 
       for(let i = 0; i < tweets.length; i++){
-        
+      let split, date, year
         if(tweets[i].text){
           tweets[i].text = linkifyHtml(tweets[i].text)
+            split = tweets[i].created_at.split(' ');
+            date = split.splice(1,2);
+            year = split[split.length-1];
+            date.push(year);
+            date = date.join(' ');
+            tweets[i].created_at = date;
+            //console.log(tweets[i].created_at)
             this.tweetsArray.push(tweets[i]);
         }
       }
     });
 
     this.renderer.listen('window', 'resize', (evt) => {
-      this.heightsService.updateObj("social", this.socialDiv.nativeElement.offsetTop);
+      this.divPosService.updateObj("social", this.socialDiv.nativeElement.offsetTop);
     })
   }
 

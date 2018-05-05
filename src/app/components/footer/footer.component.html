@@ -1,12 +1,23 @@
 <!-- Footer -->
     <footer class="footer">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-xs-9">
-              Mauva Adams is licensed and regulated by AAT under licence number 9797 &copy; {{date | date:'yyyy'}} Ma-Leon &amp; Co
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <div class="aat">
+              <div class="col-xs-12 noPadding">
+                  <img class="att-img" src="assets/shared/AATlogo.png"  alt="AAT Association of Accounting Technicians">
+              </div>
+              <div class="col-xs-12 noPadding">
+                <p class="footer-txt">Licensed and regulated by AAT under licence number 9797</p>
+              </div>
           </div>
-          <div class="col-xs-3">
-            <img  src="assets/shared/AATlogo.png"  alt="AAT Association of Accounting Technicians">
+          </div>
+          <div class="col-md-6 col-sm-9 col-xs-12 quickbooks">
+              <img src="assets/shared/quickbooks_logo.png"  alt="quickbooks_logo">
+            <p class="visible-sm"> &copy; {{date | date:'yyyy'}} Ma-Leon &amp; Co</p>
+          </div>
+          <div class="col-md-4 col-sm-4 copyright visible-md visible-lg visible-xl">
+            <p class="visible-md visible-lg visible-xl"> &copy; {{date | date:'yyyy'}} Ma-Leon &amp; Co</p>
           </div>
         </div>
 

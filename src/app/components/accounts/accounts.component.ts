@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountsComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: any) { }
 
-  ngOnInit() {
+  ngOnInit(){
+    //console.log("fired accounts")
+    this.document.body.scrollTop = 0;
   }
 
 }

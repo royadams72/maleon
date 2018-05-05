@@ -4,7 +4,7 @@ import { Section } from '../models/section.model'
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 @Injectable()
-export class HeightsService {
+export class DivPositionsService {
 private divObjArr:Array<Section> = [];
 public heightsObjs = new Subject<Array<Section>>();
 private count:number = 0;

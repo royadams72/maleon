@@ -1,21 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 @Component({
   selector: 'app-consult',
   templateUrl: './consult.component.html',
   styleUrls: ['./consult.component.css']
 })
-export class ConsultComponent implements OnInit {
+export class ConsultComponent{
 
+    constructor(@Inject(DOCUMENT) private document: any) { }
 
-    constructor(private router: Router,
-                private route: ActivatedRoute) {
-      //this.sections = ["services", "contact", "social"];
-
+    ngOnInit(){
+      this.document.body.scrollTop = 0;
     }
-
-  ngOnInit() {
-
-  }
 
 }
