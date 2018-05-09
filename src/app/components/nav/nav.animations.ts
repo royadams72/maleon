@@ -1,35 +1,32 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
-export const ActiveTrigger = trigger('activeState', [
-  state('default', style({
-    color: '#ffffff'
+// export const ActiveTrigger = trigger('activeState', [
+//   state('default', style({
+//     color: '#ffffff'
+//    })),
+//   state('active', style({
+//     color: '#6CA6C1'
+//   })),
+//   state('inService', style({
+//       color: '#000000'
+//     })),
+//   transition('default <=> active', [
+//
+//     animate('500ms ease-out')
+//   ]),
+//   transition('inService <=> default', [
+//
+//     animate('500ms ease-out')
+//   ])
+// ]);
+export const NavBg = trigger('NavBgState', [
+  state('inActive', style({
+    backgroundColor: 'transparent'
    })),
   state('active', style({
-    color: '#6CA6C1'
-  })),
-  state('inService', style({
-      color: '#000000'
-    })),
-  transition('default <=> active', [
-
-    animate('500ms ease-out')
-  ]),
-  transition('inService <=> default', [
-
-    animate('500ms ease-out')
-  ])
-]);
-export const NavServices = trigger('servicesState', [
-  state('default', style({
-    'background-color': 'transparent'
-   })),
-  state('active', style({
-    'background-color': '#080253'
+    backgroundColor: '#080253'
   })),
 
-  transition('default <=> active', [
-
-    animate('500ms ease-out')
-  ])
+  transition('inActive <=> active', animate('500ms ease-out'))
 ]);
 export const NavUl = trigger('ulState', [
   state('inActive', style({
@@ -51,7 +48,6 @@ export const NavUl = trigger('ulState', [
   ,
 
   transition('active => inActive', [
-
     animate('200ms ease-out'),
     style({'display':'none', offset: 1.0})
   ])

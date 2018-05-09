@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { HandleheightsService } from './handleheights.service';
+import { DivPositionsService } from './div-positions.service';
 
 describe('heightsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HandleheightsService]
+      providers: [DivPositionsService]
     });
   });
 
-  it('should ...', inject([HandleheightsService], (service: HandleheightsService) => {
+  it('should ...', inject([DivPositionsService], (service: HandleheightsService) => {
     expect(service).toBeTruthy();
   }));
 });

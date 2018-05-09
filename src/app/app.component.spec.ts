@@ -2,23 +2,36 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-
+import { NavComponent } from './components/nav/nav.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RouterTestingModule } from '@angular/router/testing';
+ //import { RouterOutletStubComponent } from './testing/router-stubs';
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        NavComponent,
+        FooterComponent
+
       ],
+            imports: [ RouterTestingModule ]
     });
     TestBed.compileComponents();
   });
 
+
+  it('should create the nav-app', async(() => {
+    const fixture = TestBed.createComponent(NavComponent);
+    const navApp = fixture.debugElement.componentInstance;
+    expect(navApp).toBeTruthy();
+  }));
+  /*
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-
   it(`should have as title 'app works!'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
@@ -30,5 +43,5 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  }));
+  }));*/
 });

@@ -3,7 +3,7 @@ import { SocialComponent } from '../social/social.component';
 import { ServicesComponent } from '../companyservices/services.component';
 import { TopComponent } from '../top/top.component';
 import { ContactComponent } from '../contact/contact.component';
-import { WindowRef } from '../../shared.services/windowRef';
+import { WindowRef } from '../../services/windowRef';
 //ContactComponent
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import { WindowRef } from '../../shared.services/windowRef';
 })
 export class HomeComponent implements OnInit {
 
-  public theWinHeight:string =  this.winRef.nativeWindow.innerHeight;
+  public theWinHeight:number =  this.winRef.nativeWindow.innerHeight;
 
     constructor(private renderer: Renderer2,  private winRef: WindowRef) {}
 
