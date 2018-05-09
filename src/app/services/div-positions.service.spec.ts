@@ -9,7 +9,7 @@ describe('heightsService', () => {
     });
   });
 
-  it('should ...', inject([DivPositionsService], (service: HandleheightsService) => {
+  it('should ...', inject([DivPositionsService], (service: DivPositionsService) => {
     expect(service).toBeTruthy();
   }));
 });

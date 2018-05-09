@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, Output, Renderer2, ViewChild, ElementRef,
 import { DivPositionsService } from '../../services/div-positions.service';
 import {SocialService} from '../../services/social.service';
 import * as linkify from 'linkifyjs';
-import linkifyHtml from 'linkifyjs/html';
+import * as linkifyHtml from 'linkifyjs/html';
 
 @Component({
   selector: 'app-social',
