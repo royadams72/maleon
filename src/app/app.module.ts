@@ -8,7 +8,6 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TopComponent } from './components/top/top.component';
 import { NavComponent } from './components/nav/nav.component';
-import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SocialComponent } from './components/social/social.component';
 import { SocialService } from './services/social.service';
@@ -43,7 +42,6 @@ import { ContactService } from './services/contact.service';
     ReactiveFormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    Ng2PageScrollModule.forRoot(),
     routing
   ],
   providers: [SocialService, DivPositionsService, WindowRef, ContactService],

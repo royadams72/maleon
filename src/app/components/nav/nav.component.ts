@@ -3,7 +3,6 @@ import { DivPositionsService } from '../../services/div-positions.service';
 import {NavBg, NavUl} from './nav.animations';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Router,  NavigationEnd } from '@angular/router';
-import {PageScrollConfig, PageScrollService, PageScrollInstance} from 'ng2-page-scroll/';
 import 'rxjs/add/operator/filter';
 
 @Component({
@@ -36,8 +35,7 @@ export class NavComponent implements AfterViewInit {
   constructor(public renderer: Renderer2,
               private divPosService: DivPositionsService,
               private router: Router,
-              @Inject(DOCUMENT) private document: any,
-              private pageScrollService: PageScrollService) {
+              @Inject(DOCUMENT) private document: any) {
                   //Listens for router events, checks if hash tag is present
                 this.conn =  this.router.events
                 .filter(event => event instanceof NavigationEnd)//NavigationEnd is 3rd/last event fired
@@ -64,15 +62,7 @@ export class NavComponent implements AfterViewInit {
 
 ngAfterViewInit(){
       //Easing for page scroller
-  PageScrollConfig.defaultEasingLogic = {
-      ease: (t: number, b: number, c: number, d: number): number => {
-          // easeInOutExpo easing
-          if (t === 0) return b;
-             if (t === d) return b + c;
-             if ((t /= d / 2) < 1) return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
-             return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
-      }
-   };
+
 
   this.divPosService.heightsObjs.subscribe(divObjs=>{
           //get the position of divs

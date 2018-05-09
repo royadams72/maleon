@@ -2,7 +2,6 @@ import { Component, OnInit, OnChanges, Renderer2, ViewChild, ElementRef, AfterVi
 import { DivPositionsService } from '../../services/div-positions.service';
 import { Section } from '../../models/section.model'
 import { Email } from '../../models/email.model'
-import { PageScrollService } from 'ng2-page-scroll';
 import { DOCUMENT } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Response } from '@angular/http';
