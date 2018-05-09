@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {PageScrollConfig} from 'ngx-page-scroll';
 //import { WindowRef } from './shared.services/windowRef';
 @Component({
   selector: 'app-root',
@@ -7,9 +8,14 @@ import { Component } from '@angular/core';
 
 })
 export class AppComponent {
+
 //public theWinHeight:string =  this.winRef.nativeWindow.innerHeight;
 
-  constructor() {}
+  constructor() {
+
+    console.log(PageScrollConfig)
+     PageScrollConfig.defaultDuration = 300;
+  }
 
   ngOnInit() {
 
