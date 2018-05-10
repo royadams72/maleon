@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
 @Component({
   selector: 'app-tax',
   templateUrl: './tax.component.html',
@@ -7,9 +8,10 @@ import { DOCUMENT } from '@angular/platform-browser';
 })
 export class TaxComponent implements OnInit{
 
-  constructor(@Inject(DOCUMENT) private document: any) { }
+  constructor(@Inject(DOCUMENT) private document: any, private pageScrollService: PageScrollService) { }
+
   ngOnInit(){
-    //console.log("fired")
-    this.document.body.scrollTop = 0;
+    let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: this.document, scrollTarget: '.container',pageScrollOffset:100, pageScrollDuration:0});
+        this.pageScrollService.start(pageScrollInstance);
   }
 }
