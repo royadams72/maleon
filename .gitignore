@@ -16,6 +16,7 @@ server/node_modules
 server/.env
 dist/
 dist-server/
+_assets/
 $RECYCLE.BIN/
 
 .DS_Store

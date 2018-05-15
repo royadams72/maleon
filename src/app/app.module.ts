@@ -23,7 +23,7 @@ import { ConsultComponent } from './components/consult/consult.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactService } from './services/contact.service';
-
+import { LegalsComponent } from './components/legals/legals.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,8 @@ import { ContactService } from './services/contact.service';
     TaxComponent,
     ConsultComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    LegalsComponent
   ],
   imports: [
     BrowserModule,

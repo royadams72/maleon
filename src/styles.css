@@ -122,12 +122,13 @@ nav ul li a:link, nav ul li a:hover, nav ul li a:active, .nav-link{text-decorati
   margin: 0
 }
 .headerTxt img{
-   width: 70%;
+   width: 90%;
    height: auto;
-   margin-left: 4%;
+   margin: 0 auto;
 }
 .headerTxt{
    position: absolute;
+   left: 0;
    bottom: 5%;
 }
 
@@ -273,6 +274,7 @@ nav ul li a:link, nav ul li a:hover, nav ul li a:active, .nav-link{text-decorati
 }
  .section1 ul li, .section2 ul li{
      font-size: 1.5rem;
+     padding-bottom: 4px;
  }
  .section1 .btn, .section2 .btn{
    padding:3px;
@@ -289,6 +291,48 @@ nav ul li a:link, nav ul li a:hover, nav ul li a:active, .nav-link{text-decorati
  .section2 a{
    color: #fff;
  }
+/* .standard-li ul li{
+  list-style-type: disc!important;
+
+}
+
+.standard-li ul li:before {
+    border-width: 0;
+      content: "";
+} */
+ .li-xtra-pad  ul li{
+   padding-top: 12px;
+   padding-right: 10px;
+
+ }
+
+ .li-xtra-pad  ul li:first-child{
+   padding-top: 0;
+ }
+.ul-header{
+  margin-bottom: -5px;
+}
+.ul-footer{
+  margin-top: -10px;
+}
+.facts-li  ul li{
+list-style-type: none;
+padding-bottom: 0;
+}
+
+ .facts-li  ul li:before {
+
+    content: "";
+    border-color: transparent #fff;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
+}
  /******FOOTER*************************/
 footer {
   position: absolute;
@@ -311,10 +355,12 @@ footer {
   float: left;
   height: auto;
 }
-footer .footer-txt{
-  font-size: 1.1rem;
-  line-height: 1.5rem
 
+footer address, .copyright{
+  padding-top: 10px;
+  text-align: right;
+  padding-right: 30px;
+  margin-bottom: 0;
 }
 .aat{
   width: 232px;
@@ -324,17 +370,22 @@ footer .footer-txt{
 .aat img{
   margin: 0 auto;
 }
+.aat-text{
+  padding:0;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  margin-left: -10px;
+}
 footer .noPadding{
   padding: 0!important
 }
 .quickbooks img{
-  padding-left: 20px
+  padding-left: 20px;
+  /* float: right; */
 }
 
-.copyright p{
-  text-align: right;
-  padding-right: 30px;
-  line-height: 14rem;
+.copyright{
+  padding-top: 3px;
   height: 20px;
 }
 /* MEDIA QUERIES */
@@ -353,9 +404,9 @@ footer .noPadding{
     display: block;
     /*height: 80px;*/
   }
-  footer{
-    height: 250px
-  }
+
+
+
   .navbar-header{
   width: 100%;
   }
@@ -373,10 +424,25 @@ footer .noPadding{
 @media (max-width: 992px){
   .aat{
     height: 100px;
-    padding-right: 30px
+    padding-right: 30px;
+
   }
+  /* .aat-text{
+   margin-left: -10px;
+  } */
   .quickbooks p{
     display: inline-block!important;
+  }
+
+  footer{
+    height: 250px
+  }
+  footer address, .copyright{
+    text-align: center;
+    padding-right: 0;
+  }
+  footer address{
+    padding-top: 10px;
   }
 }
 
@@ -395,6 +461,9 @@ footer .noPadding{
   .quickbooks{
     padding-left: 20px;
   }
+  .aat{
+    padding:14px 0 0 0;
+  }
   #social{
     padding-bottom:240px;
   }
@@ -406,6 +475,7 @@ footer .noPadding{
   .navbar-nav {
       margin-top: 25px;
   }
+
 }
 @media (max-width: 550px){
   .navbar-header a{

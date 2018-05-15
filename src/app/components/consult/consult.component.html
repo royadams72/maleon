@@ -8,8 +8,12 @@
   <div class="row section1">
     <div class="col-md-12">
       <p>
-      <span class="head1">Computerised Accountancy Systems</span> - The use of accounting related systems.
-      <em>Using a manual system for doing your accounts is cumbersome and prone to errors.</em>
+      <span class="head1">Computerised Accountancy Systems (Cloud accounting) – The use of accounting related systems.</span>
+      </p>
+      <p>
+        Using a manual system for doing your accounts is cumbersome and prone to errors.
+      </p>
+    <p>
       Ma’Leon and Co is accredited and proficient in using several accounting
       software systems suitable for both individuals and small businesses.
     </p>
@@ -24,15 +28,17 @@
       For a small monthly fee,
       with no hefty yearly costs for upgrades, you can have your accounts at your fingertips.
     </p>
-    <button type="button" [routerLink]="['/']" href='#contact' class="btn btn-lg margin20Left" name="button">Contact us</button>
+    <button type="button" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" [routerLink]="['/']" href='#contact' class="btn btn-lg margin20Left" name="button">Contact us</button>
     </div>
   </div>
   <div class="row section2">
     <div class="col-md-12"><p>
-      <span class="head1">Company Secretarial</span> – Services relating to legal services of an incorporated company.
+      <span class="head1">Company Secretarial – Services relating to legal services of an incorporated company</span>
     </p>
     <p>
-      Every incorporated company needs to ensure that they comply with its obligations under company law.
+    Every incorporated company needs to ensure that they comply with its obligations under company law.
+  </p>
+  <p>
       Ma’Leon and Co can assist you in the following so that you focus on your business:
     </p>
       <ul>
@@ -44,16 +50,24 @@
       <p>
         There are penalties for filing your accounts late to Companies House and these can be <a href="https://www.gov.uk/annual-accounts/penalties-for-late-filing" target="_blank">found here.</a>
       </p>
-      <p>
-        <strong>Important:</strong><em> Annual Accounts are not to be confused with Annual Returns.
-        An Annual Return (now called ‘Confirmation Statement’ from 30th June 2016)
-        is a snapshot of information that Companies House holds about a company
-        (not financial information). Both, however, are legally required to be filed to
-        Companies House on an annual basis. If you are unsure which is due please
-        <button type="button" [routerLink]="['/']" href='#contact' class="btn btn-lg" name="button">Contact us</button>
-        and we will be more than willing to check for you.</em>
-
-      </p>
+      <p class="ul-header"><i>A few facts</i></p>
+      <span class="facts-li">
+        <ul>
+          <li>
+            <strong>Important:</strong> Annual Accounts are not to be confused with Annual Returns
+          </li>
+          <li>
+          An Annual Return (now called ‘Confirmation Statement’ from 30th June 2016) is a snapshot
+          of information that Companies House holds about a company (not financial information)
+          </li>
+          <li>
+          Both, however, are legally required to be filed to Companies House on an annual basis
+          </li>
+          <li>
+            If you are unsure which is due please <button type="button" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" [routerLink]="['/']" href='#contact' class="btn btn-lg" name="button">Contact us</button> and we will be more than willing to check for you.
+          </li>
+        </ul>
+      </span>
     </div>
   </div>
 </div>

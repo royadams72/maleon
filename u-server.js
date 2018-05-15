@@ -1,5 +1,5 @@
 require('zone.js/dist/zone-node');
-
+const fs = require('fs');
 const express = require('express');
 const {
   provideModuleMap
@@ -7,7 +7,7 @@ const {
 
 const ngExpressEngine = require('@nguniversal/express-engine')
   .ngExpressEngine;
-const fs = require('fs');
+
 
 const {
   ServerAppModuleNgFactory,

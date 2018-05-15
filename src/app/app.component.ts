@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {PageScrollConfig} from 'ngx-page-scroll';
-//import { WindowRef } from './shared.services/windowRef';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +8,6 @@ import {PageScrollConfig} from 'ngx-page-scroll';
 })
 export class AppComponent {
 
-//public theWinHeight:string =  this.winRef.nativeWindow.innerHeight;
 
   constructor() {
 

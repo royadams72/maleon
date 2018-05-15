@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT , isPlatformBrowser, isPlatformServer} from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
 @Component({
   selector: 'app-tax',
@@ -8,10 +9,23 @@ import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ngx-pag
 })
 export class TaxComponent implements OnInit{
 
-  constructor(@Inject(DOCUMENT) private document: any, private pageScrollService: PageScrollService) { }
+  constructor(@Inject(DOCUMENT) private document: any,
+              private pageScrollService: PageScrollService,
+              @Inject(PLATFORM_ID) private platformId: Object) { }
+ngOnInit(){
+  if (isPlatformBrowser(this.platformId)) {
+  // Client only code.
+  let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: this.document, scrollTarget: '.container',pageScrollOffset:100, pageScrollDuration:0});
+      this.pageScrollService.start(pageScrollInstance);
+      console.log(isPlatformBrowser(this.platformId), this.platformId)
 
-  ngOnInit(){
-    let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: this.document, scrollTarget: '.container',pageScrollOffset:100, pageScrollDuration:0});
-        this.pageScrollService.start(pageScrollInstance);
-  }
+    }
+ if (isPlatformServer(this.platformId)) {
+   console.log(isPlatformBrowser(this.platformId), this.platformId)
+   // Server only code.
+
+ }
+
+}
+
 }
