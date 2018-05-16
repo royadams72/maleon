@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor() {
 
-    console.log(PageScrollConfig)
+    // console.log(PageScrollConfig)
      PageScrollConfig.defaultDuration = 400;
      PageScrollConfig.defaultEasingLogic = {
             ease: (t: number, b: number, c: number, d: number): number => {

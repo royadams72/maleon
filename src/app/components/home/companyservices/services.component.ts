@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
-import { DivPositionsService } from '../../services/div-positions.service';
+import { DivPositionsService } from '../../../services/div-positions.service';
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',

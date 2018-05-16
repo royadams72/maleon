@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
-import { DivPositionsService } from '../../services/div-positions.service';
+import { DivPositionsService } from '../../../services/div-positions.service';
 
 @Component({
   selector: 'app-top',

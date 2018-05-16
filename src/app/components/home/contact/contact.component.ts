@@ -1,11 +1,11 @@
 import { Component, OnInit, OnChanges, Renderer2, ViewChild, ElementRef, AfterViewInit, } from '@angular/core';
-import { DivPositionsService } from '../../services/div-positions.service';
-import { Section } from '../../models/section.model'
-import { Email } from '../../models/email.model'
+import { DivPositionsService } from '../../../services/div-positions.service';
+import { Section } from '../../../models/section.model'
+import { Email } from '../../../models/email.model'
 import { DOCUMENT } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Response } from '@angular/http';
-import { ContactService } from '../../services/contact.service';
+import { ContactService } from '../../../services/contact.service';
 //
 @Component({
   selector: 'app-contact',

@@ -48,12 +48,12 @@ export class NavComponent implements AfterViewInit {
                         this.homePageActive = true;
                        this.navBgActiveState = 'inActive'
                         this.switchNav('inActive', 'active')
-                        console.log('this.navBgActiveState=inActive')
+                        // console.log('this.navBgActiveState=inActive')
                       }else if(homepages == -1 || page != "/"){
                         this.homePageActive = false;
                         this.switchNav('active', 'inActive')
                         this.navBgActiveState = 'active';
-                        console.log('this.navBgActiveState=active')
+                        // console.log('this.navBgActiveState=active')
 
                     }
                 });
@@ -76,20 +76,20 @@ this.renderer.listen('window', 'scroll', (evt) => {
     if(window.scrollY >= this.services - this.padding && this.homePageActive){
       if(this.navBgActiveState != 'active'){
         this.navBgActiveState = 'active';
-        console.log('active')
+        // console.log('active')
     }
 
     }else if(window.scrollY <= this.services - this.padding && this.homePageActive){
       if(this.navBgActiveState != 'inActive'){
       this.navBgActiveState = 'inActive'
-      console.log('inActive')
+      // console.log('inActive')
     }
     }
   });
 
   this.renderer.listen('window', 'load', (evt) => {
     let winWidth = evt.currentTarget.innerWidth;
-      console.log(evt.currentTarget.innerWidth);
+      // console.log(evt.currentTarget.innerWidth);
       if(winWidth <= 1000){
         this.dataTarget = '.navbar-collapse';
         this.dataToggle = 'collapse';

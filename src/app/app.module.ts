@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -7,14 +7,14 @@ import { HttpModule } from '@angular/http';
 import {NgxPageScrollModule, PageScrollService, PageScrollConfig} from 'ngx-page-scroll';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { ContactComponent } from './components/home/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TopComponent } from './components/top/top.component';
+import { TopComponent } from './components/home/top/top.component';
 import { NavComponent } from './components/nav/nav.component';
 
-import { SocialComponent } from './components/social/social.component';
+import { SocialComponent } from './components/home/social/social.component';
 import { SocialService } from './services/social.service';
-import { ServicesComponent } from './components/companyservices/services.component';
+import { ServicesComponent } from './components/home/companyservices/services.component';
 import { DivPositionsService } from './services/div-positions.service';
 import { WindowRef } from './services/windowRef';
 import { AccountsComponent } from './components/accounts/accounts.component';
@@ -42,6 +42,7 @@ import { LegalsComponent } from './components/legals/legals.component';
   ],
   imports: [
     BrowserModule,
+    BrowserTransferStateModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,

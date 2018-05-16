@@ -1,8 +1,11 @@
 import { Component, OnInit, OnDestroy, Output, Renderer2, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { DivPositionsService } from '../../services/div-positions.service';
-import {SocialService} from '../../services/social.service';
+
+import { DivPositionsService } from '../../../services/div-positions.service';
+import {SocialService} from '../../../services/social.service';
 import * as linkify from 'linkifyjs';
 import * as linkifyHtml from 'linkifyjs/html';
+
+
 
 @Component({
   selector: 'app-social',
@@ -12,9 +15,12 @@ import * as linkifyHtml from 'linkifyjs/html';
 export class SocialComponent implements OnInit, OnDestroy, AfterViewInit{
   @ViewChild('social') socialDiv: ElementRef;
   private conn: any;
+
   public tweetsArray:Array<any> = [];
 
-  constructor(private soService: SocialService, private renderer: Renderer2, private divPosService: DivPositionsService) { }
+  constructor(private soService: SocialService,
+              private renderer: Renderer2,
+              private divPosService: DivPositionsService) { }
 
   ngAfterViewInit(){
   // console.log("social= "+this.socialDiv.nativeElement.offsetTop)
@@ -22,9 +28,9 @@ export class SocialComponent implements OnInit, OnDestroy, AfterViewInit{
   }
 
   ngOnInit() {
+
     this.conn = this.soService.initTwitter()
     .subscribe(tweets=>{
-
       for(let i = 0; i < tweets.length; i++){
       let split, date, year
         if(tweets[i].text){

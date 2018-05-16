@@ -1,5 +1,4 @@
-
- /*-------------------------------------------------- */
+/*-------------------------------------------------- */
  html {
    position: relative;
    min-height: 100%;
@@ -291,15 +290,9 @@ nav ul li a:link, nav ul li a:hover, nav ul li a:active, .nav-link{text-decorati
  .section2 a{
    color: #fff;
  }
-/* .standard-li ul li{
-  list-style-type: disc!important;
-
+.last-section{
+  margin-bottom: 50px
 }
-
-.standard-li ul li:before {
-    border-width: 0;
-      content: "";
-} */
  .li-xtra-pad  ul li{
    padding-top: 12px;
    padding-right: 10px;
@@ -361,6 +354,7 @@ footer address, .copyright{
   text-align: right;
   padding-right: 30px;
   margin-bottom: 0;
+  font-size: 1.1rem;
 }
 .aat{
   width: 232px;
@@ -419,6 +413,7 @@ footer .noPadding{
   .btn{
     background-color: #6CA6C1!important;
   }
+
 }
 
 @media (max-width: 992px){
@@ -426,6 +421,9 @@ footer .noPadding{
     height: 100px;
     padding-right: 30px;
 
+  }
+  .last-section{
+    margin-bottom: 200px
   }
   /* .aat-text{
    margin-left: -10px;
