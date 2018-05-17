@@ -12,10 +12,9 @@ log.txt
 .vscode/
 npm-debug.log*
 node_modules
+server/
 server/node_modules
 server/.env
-dist/
-dist-server/
 _assets/
 $RECYCLE.BIN/
 
