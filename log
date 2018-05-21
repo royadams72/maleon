@@ -1,0 +1,71 @@
+2018-05-17T12:52:49.338930+00:00 app[api]: Release v1 created by user roy@eden-grafix.co.uk
+2018-05-17T12:52:49.440629+00:00 app[api]: Release v2 created by user roy@eden-grafix.co.uk
+2018-05-17T12:52:49.338930+00:00 app[api]: Initial release by user roy@eden-grafix.co.uk
+2018-05-17T12:52:49.440629+00:00 app[api]: Enable Logplex by user roy@eden-grafix.co.uk
+2018-05-17T13:01:43.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:01:43.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:04:11.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:04:11.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:07:41.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:07:41.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:08:23.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:08:23.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:09:59.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:09:59.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:11:34.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:11:34.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:14:01.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:14:01.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:19:43.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:19:43.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:22:57.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:22:57.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-17T13:26:18.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-17T13:26:18.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:06:16.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:06:20.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:21:27.227418+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=ma-leon.herokuapp.com request_id=1097f9d2-21d6-4a41-8a2a-8bea341b9f0b fwd="82.24.142.46" dyno= connect= service= status=502 bytes= protocol=https
+2018-05-21T10:21:27.431779+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=ma-leon.herokuapp.com request_id=174c3043-cfa2-49b0-bea2-908433263205 fwd="82.24.142.46" dyno= connect= service= status=502 bytes= protocol=https
+2018-05-21T10:27:57.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:28:01.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:29:31.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:29:35.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:30:40.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:30:43.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:31:59.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:32:03.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:34:03.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:34:08.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:35:34.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:35:38.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:37:16.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:37:20.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T10:42:47.754253+00:00 app[api]: Rollback to v1 by user roy@eden-grafix.co.uk
+2018-05-21T10:42:47.754253+00:00 app[api]: Release v3 created by user roy@eden-grafix.co.uk
+2018-05-21T10:42:58.284777+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=ma-leon.herokuapp.com request_id=1b7167cf-e29a-4027-8950-a7c56f178409 fwd="82.24.142.46" dyno= connect= service= status=502 bytes= protocol=https
+2018-05-21T10:42:58.486047+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=ma-leon.herokuapp.com request_id=576b1901-c05e-487b-ba78-0e7a8256a2b1 fwd="82.24.142.46" dyno= connect= service= status=502 bytes= protocol=https
+2018-05-21T10:59:09.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T10:59:13.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T11:02:38.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T11:02:42.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T11:21:29.000000+00:00 app[api]: Build started by user roy@eden-grafix.co.uk
+2018-05-21T11:21:33.000000+00:00 app[api]: Build failed -- check your build logs
+2018-05-21T11:25:08.417552+00:00 app[api]: Starting process with command `bash` by user roy@eden-grafix.co.uk
+2018-05-21T11:25:09.064307+00:00 heroku[run.9556]: State changed from starting to up
+2018-05-21T11:25:08.820281+00:00 heroku[run.9556]: Awaiting client
+2018-05-21T11:25:08.908486+00:00 heroku[run.9556]: Starting process with command `bash`
+2018-05-21T11:27:19.777509+00:00 heroku[run.9556]: Client connection closed. Sending SIGHUP to all processes
+2018-05-21T11:27:20.297126+00:00 heroku[run.9556]: Process exited with status 129
+2018-05-21T11:27:20.309917+00:00 heroku[run.9556]: State changed from up to complete
+2018-05-21T11:27:48.897578+00:00 app[api]: Starting process with command `bash /tmp/npmcache.36vit/_logs/2018-05-21T11_21_33_564Z-debug.log` by user roy@eden-grafix.co.uk
+2018-05-21T11:27:49.380103+00:00 heroku[run.6433]: Awaiting client
+2018-05-21T11:27:49.402151+00:00 heroku[run.6433]: Starting process with command `bash /tmp/npmcache.36vit/_logs/2018-05-21T11_21_33_564Z-debug.log`
+2018-05-21T11:27:49.601770+00:00 heroku[run.6433]: State changed from starting to up
+2018-05-21T11:27:53.531204+00:00 heroku[run.6433]: State changed from up to complete
+2018-05-21T11:27:53.518630+00:00 heroku[run.6433]: Process exited with status 127
+2018-05-21T11:28:22.321546+00:00 heroku[run.6344]: Awaiting client
+2018-05-21T11:28:22.337946+00:00 heroku[run.6344]: Starting process with command `bash ./tmp/npmcache.36vit/_logs/2018-05-21T11_21_33_564Z-debug.log`
+2018-05-21T11:28:22.614168+00:00 heroku[run.6344]: State changed from starting to up
+2018-05-21T11:28:21.877532+00:00 app[api]: Starting process with command `bash ./tmp/npmcache.36vit/_logs/2018-05-21T11_21_33_564Z-debug.log` by user roy@eden-grafix.co.uk
+2018-05-21T11:28:26.444032+00:00 heroku[run.6344]: State changed from up to complete
+2018-05-21T11:28:26.433492+00:00 heroku[run.6344]: Process exited with status 127
