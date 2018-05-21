@@ -43,7 +43,9 @@
     "socket.io-client": "^1.7.3",
     "ts-helpers": "^1.1.1",
     "web-animations-js": "^2.2.5",
-    "zone.js": "0.8.5",
+    "zone.js": "0.8.5"
+  },
+  "devDependencies": {
     "@angular/cli": "~1.7.4",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
