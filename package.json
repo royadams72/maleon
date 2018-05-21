@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",
+  "engines": {
+    "node": "9.3.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node index.js",
@@ -69,8 +72,5 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
-  },
-  "engines": {
-    "node": "9.x"
   }
 }
