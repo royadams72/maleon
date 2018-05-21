@@ -11,11 +11,13 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
-/node_modules
+/node_modules/
+/dist-server/
+/dist/
 /server/
 /server/node_modules
 /server/.env
-_assets/
+/_assets/
 $RECYCLE.BIN/
 
 .DS_Store
