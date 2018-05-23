@@ -126,6 +126,7 @@ nav ul li a:link, nav ul li a:hover, nav ul li a:active, .nav-link{text-decorati
    margin: 0 auto;
 }
 .headerTxt{
+  width:100%;
    position: absolute;
    left: 0;
    bottom: 5%;
