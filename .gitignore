@@ -12,6 +12,8 @@ log.txt
 .vscode/
 npm-debug.log*
 /node_modules/
+/dist/
+/dist-server/
 /server/
 /server/node_modules
 /server/.env
