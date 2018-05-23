@@ -477,6 +477,6 @@ footer .noPadding{
 }
 @media (max-width: 550px){
   .navbar-header a{
-    width:70%
+    width:60%
   }
 }
