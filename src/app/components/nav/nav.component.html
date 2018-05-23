@@ -26,23 +26,25 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" id='navbar-ul-services' [@ulState]="servicesNavState">
-      <li class="nav-item s-link" >
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['']" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item s-link" >
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</a>
-      </li>
-      <li class="nav-item">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/taxation']" routerLinkActive="is-active" class="nav-link">Taxation</a>
-      </li>
-      <li class="nav-item">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/accountancy']" class="nav-link" routerLinkActive="is-active">Accountancy</a>
+      <li class="nav-item nav-last">
+        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/legals']" routerLinkActive="is-active" class="nav-link">Ts and Cs</a>
       </li>
       <li class="nav-item nav-last">
         <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/consultancy']" routerLinkActive="is-active" class="nav-link">Consultancy</a>
       </li>
-      <li class="nav-item nav-last">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/legals']" routerLinkActive="is-active" class="nav-link">Ts and Cs</a>
+      <li class="nav-item">
+        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/accountancy']" class="nav-link" routerLinkActive="is-active">Accountancy</a>
+      </li>
+
+      <li class="nav-item">
+        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/taxation']" routerLinkActive="is-active" class="nav-link">Taxation</a>
+      </li>
+      <li class="nav-item s-link" >
+        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</a>
+      </li>
+
+      <li class="nav-item s-link" >
+        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['']" class="nav-link">Home</a>
       </li>
     </ul>
     </div><!--/.nav-collapse -->
