@@ -1,27 +1,27 @@
 <!-- [style.height.px]="winHeight"-->
 <div id="social" #social>
-<div class="container">
+  <div class="container">
     <div class="row">
 
-          <h2>Social</h2>
-          <h3>Recent Tweets</h3>
-            <div class="col-md-4 outer-status" *ngFor="let tweet of tweetsArray">
-              <div class="row status">
-                  <div class="status-image col-xs-3">
-                    <img  src={{tweet.user.profile_image_url}} class="" alt="">
-                </div>
-                <div class="right-content col-xs-9">
-                  <span class="card-title">{{tweet.user.name}}</span>
-                  <div class="card-content">
-                      <p [innerHTML]="tweet.created_at"></p>
-                      <p [innerHTML]="tweet.text"></p>
-                  </div>
-                  <div class="card-action">
-                    <a href="https://twitter.com/intent/retweet?tweet_id={{tweet.id_str}}" target="_blank" class="retweet">Retweet</a>
-                    </div>
-                </div>
-              </div>
+      <h2>Social</h2>
+      <h3>Recent Tweets</h3>
+      <div class="col-md-4 outer-status" *ngFor="let tweet of tweetsArray">
+        <div class="row status">
+          <div class="status-image col-xs-3">
+            <img src={{tweet.user.profile_image_url}} alt="Ma'Leon Accountancy Services Limited">
+          </div>
+          <div class="right-content col-xs-9">
+            <span class="card-title">{{tweet.user.name}}</span>
+            <div class="card-content">
+              <p [innerHTML]="tweet.created_at"></p>
+              <p [innerHTML]="tweet.text"></p>
             </div>
+            <div class="card-action">
+              <a href="https://twitter.com/intent/retweet?tweet_id={{tweet.id_str}}" target="_blank" class="retweet">Retweet</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
     <div class="row social-btns">
@@ -32,17 +32,18 @@
             <a href="https://www.facebook.com/MaLeonandco/" target="_blank">
           <img src="assets/shared/facebookIcon.png" class="img-responsive" alt="Connect on Facebook">
         </a>
-        </div>
-        <div class="col-xs-4 col-sm-3 col-md-2">
-          <a href="https://twitter.com/MaLeonandco" target="_blank"><img src="assets/shared/twitterIcon.png" class="img-responsive" alt="Connect on Twitter"></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div class="col-xs-4 col-sm-3 col-md-2">
-          <img src="assets/shared/linkedInIcon.png" class="img-responsive" alt="Connect on LinkedIn">
+          </div>
+          <div class="col-xs-4 col-sm-3 col-md-2">
+            <a href="https://twitter.com/MaLeonandco" target="_blank"><img src="assets/shared/twitterIcon.png" class="img-responsive" alt="Connect on Twitter"></a>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class="col-xs-4 col-sm-3 col-md-2">
+            <a href="https://www.linkedin.com/in/mauva-adams-maat-fellow-aatqb-55112342/" target="_blank"><img src="assets/shared/linkedInIcon.png" class="img-responsive" alt="Connect on LinkedIn"></a>
+          </div>
         </div>
       </div>
     </div>
-    </div>
 
-</div>
-<!---->
+  </div>
+  <!---->
 </div>

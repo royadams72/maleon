@@ -39,7 +39,14 @@ export class HomeComponent implements OnInit {
       this.meta.updateTag({
         name: 'description', content: this.pageDescription
       })
-      this.renderer.listen('window', 'resize', (evt) => {
+
+    this.meta.addTag({name: 'twitter:card', content: 'summary'});
+     this.meta.addTag({name: 'twitter:site', content: '@MaLeonandco'});
+     this.meta.addTag({name: 'twitter:title', content: this.pageDescription});
+     this.meta.addTag({name: 'twitter:description', content: this.pageDescription});
+     this.meta.addTag({name: 'twitter:text:description', content: this.pageDescription});
+     this.meta.addTag({name: 'twitter:image', content: 'https://pbs.twimg.com/profile_images/596590359083384832/nsvzSPFT_normal.jpg'});
+     this.renderer.listen('window', 'resize', (evt) => {
         //  console.log('Native window obj', this.winRef.nativeWindow.innerHeight);
        this.theWinHeight = this.winRef.nativeWindow.innerHeight;
 
