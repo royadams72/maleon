@@ -1,8 +1,14 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgxPageScrollModule, PageScrollService, PageScrollConfig } from 'ngx-page-scroll';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DivPositionsService } from '../../services/div-positions.service';
+import { NavBg, NavUl } from './nav.animations';
+import { DOCUMENT } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { routing } from '../../app.routing';
 import { NavComponent } from './nav.component';
 
 describe('NavComponent', () => {
@@ -11,9 +17,11 @@ describe('NavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavComponent ]
+      declarations: [NavComponent],
+      imports: [FormsModule, ReactiveFormsModule, NgxPageScrollModule, routing],
+      providers: [DivPositionsService, PageScrollService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

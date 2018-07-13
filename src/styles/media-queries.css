@@ -1,0 +1,124 @@
+/* MEDIA QUERIES */
+@media (max-width: 768px){
+    #services h3, #social h3, #contact h3,  #top h3{
+      font-size: 2rem;
+      padding-bottom: 10%;
+    }
+    .quickbooks {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+    .footer > .container {
+      padding-right: 0;
+      padding-left: 0;
+      display: block;
+      /*height: 80px;*/
+    }
+    .navbar-header{
+    width: 100%;
+    }
+  
+    .aat{
+      padding:14px 0 0 0;
+    }
+    #social{
+      padding-bottom:240px;
+    }
+    #services h3, #social h3, #contact h3, #top h3 {
+      font-size: 1.4rem
+    }
+    .navbar-nav {
+      margin-top: 25px;
+  }
+  }
+  
+  @media (max-width: 890px){
+    #navbar-ul-services{
+      width:50%
+    }
+  }
+  @media (min-width: 992px){
+    .col-md-12 {
+        width: 100%;
+        padding:0!important
+    }
+    .btn{
+      background-color: #6CA6C1!important;
+    }
+  
+  }
+  
+  @media (max-width: 992px){
+    .aat{
+      height: 100px;
+      padding-right: 30px;
+  
+    }
+    .last-section{
+      margin-bottom: 200px
+    }
+    /* .aat-text{
+     margin-left: -10px;
+    } */
+    .quickbooks p{
+      display: inline-block!important;
+    }
+  
+    footer{
+      height: 250px
+    }
+    footer address, .copyright{
+      text-align: center;
+      padding-right: 0;
+    }
+    footer address{
+      padding-top: 10px;
+    }
+  }
+  
+  @media (max-width: 1187px){
+    .quickbooks{
+      padding-left: 30px;
+    }
+  }
+  
+  @media (max-width: 1160px){
+    .quickbooks{
+      padding-left: 60px;
+    }
+  }
+  @media (max-width: 768px){
+  
+  }
+  @media (min-width: 768px){
+   
+  
+  }
+  @media (max-width: 550px){
+    .navbar-header a{
+      width:60%
+    }
+  }
+  @media (max-width: 760px){
+    #navbar-ul, #navbar-ul-services{
+      text-align: right;
+      width: 30%;
+      background-color: #6CA6C1!important;
+      border-radius: 9px;
+      border: 1px solid #000;
+  
+    }
+    #navbar-ul li, #navbar-ul-services li{
+      /* border-bottom: 1px solid #000; */
+      width:100%;
+      margin-left: 0;
+    }
+  
+    #navbar{
+      padding-right: 50px
+    }
+    .nav-last{
+      border: none!important;
+    }
+  }
+  

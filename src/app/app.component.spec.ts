@@ -5,7 +5,10 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterTestingModule } from '@angular/router/testing';
- //import { RouterOutletStubComponent } from './testing/router-stubs';
+import { NgxPageScrollModule, PageScrollService, PageScrollConfig } from 'ngx-page-scroll';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DivPositionsService } from './services/div-positions.service';
+//import { RouterOutletStubComponent } from './testing/router-stubs';
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -15,7 +18,8 @@ describe('AppComponent', () => {
         FooterComponent
 
       ],
-            imports: [ RouterTestingModule ]
+      providers: [PageScrollService, DivPositionsService],
+      imports: [RouterTestingModule, NgxPageScrollModule]
     });
     TestBed.compileComponents();
   });

@@ -61,7 +61,7 @@ app.get('/*', (req, res) => {
   });
   console.timeEnd(`GET: ${req.originalUrl}`);
 });
-var port = process.env.PORT || 8080
+var port = process.env.PORT || 3030
 app.listen(port, () => {
   console.log(`server running on ${port}`)
 });

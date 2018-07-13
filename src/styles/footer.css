@@ -1,0 +1,56 @@
+/******FOOTER*************************/
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    /* Set the fixed height of the footer here */
+    height: 100px;
+    /*line-height: 80px;  Vertically center the text there */
+    background-color: #080253;
+    color: #fff;
+  }
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    display: block;
+    height: 80px;
+  }
+  .footer .att-img {
+    float: left;
+    height: auto;
+  }
+  
+  footer address, .copyright{
+    padding-top: 10px;
+    text-align: right;
+    padding-right: 30px;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+  }
+  .aat{
+    width: 232px;
+    height: 80px;
+    padding-left: 30px
+  }
+  .aat img{
+    margin: 0 auto;
+  }
+  .aat-text{
+    padding:0;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin-left: -10px;
+  }
+  footer .noPadding{
+    padding: 0!important
+  }
+  .quickbooks img{
+    padding-left: 20px;
+    /* float: right; */
+  }
+  
+  .copyright{
+    padding-top: 3px;
+    height: 20px;
+  }

@@ -13,38 +13,40 @@
     <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right" id='navbar-ul' [@ulState]="defaultNavState">
       <li class="nav-item s-link" >
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/about']" class="nav-link">About</a>
+        <a [routerLink]="['/about']" class="nav-link">About</a>
       </li>
       <li class="nav-item">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle"  class="nav-link" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" href="#services">Services</a>
+        <a  class="nav-link" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" href="#services">Services</a>
       </li>
       <li class="nav-item">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" class="nav-link" href="#contact">Contact</a>
+        <a pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" class="nav-link" href="#contact">Contact</a>
       </li>
       <li class="nav-item nav-last">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" class="nav-link" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50"  href="#social">Social</a>
+        <a class="nav-link" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50"  href="#social">Social</a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" id='navbar-ul-services' [@ulState]="servicesNavState">
       <li class="nav-item nav-last">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/legals']" routerLinkActive="is-active" class="nav-link">Ts and Cs</a>
+        <!-- <a [routerLink]="['/legals']" routerLinkActive="is-active" class="nav-link">Ts and Cs</a> -->
+        <a [routerLink]="['/legals']" routerLinkActive="is-active" class="nav-link">Ts and Cs</a>
+
       </li>
       <li class="nav-item nav-last">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/consultancy']" routerLinkActive="is-active" class="nav-link">Consultancy</a>
+        <a [routerLink]="['/consultancy']" routerLinkActive="is-active" class="nav-link">Consultancy</a>
       </li>
       <li class="nav-item">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/accountancy']" class="nav-link" routerLinkActive="is-active">Accountancy</a>
+        <a [routerLink]="['/accountancy']" class="nav-link" routerLinkActive="is-active">Accountancy</a>
       </li>
 
       <li class="nav-item">
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['/taxation']" routerLinkActive="is-active" class="nav-link">Taxation</a>
+        <a [routerLink]="['/taxation']" routerLinkActive="is-active" class="nav-link">Taxation</a>
       </li>
       <li class="nav-item s-link" >
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</a>
+        <a routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</a>
       </li>
 
       <li class="nav-item s-link" >
-        <a [attr.data-target]="dataTarget" [attr.data-toggle]="dataToggle" [routerLink]="['']" class="nav-link">Home</a>
+        <a [routerLink]="['']" class="nav-link">Home</a>
       </li>
     </ul>
     </div><!--/.nav-collapse -->
