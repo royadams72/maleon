@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {PLATFORM_ID} from '@angular/core';
-import {isPlatformServer, isPlatformBrowser} from '@angular/common';
+import {isPlatformServer} from '@angular/common';
 import {makeStateKey, TransferState} from '@angular/platform-browser';
 import { Observable } from "rxjs";
 import 'rxjs/Rx';
@@ -11,7 +11,7 @@ const TWITTER_KEY = makeStateKey('twitter');
 export class SocialService {
   private twitter:any;
   private url = 'https://maleonserver.herokuapp.com/';//http://localhost:3000/
-  constructor(private http: Http,
+  constructor(private http: HttpClient,
               @Inject(PLATFORM_ID) private platformId,
               private transferState:TransferState) { }
 
@@ -19,8 +19,8 @@ export class SocialService {
     this.twitter = this.transferState.get(TWITTER_KEY, null as any);
   //set this.twitter to TWITTER_KEY, but set default value to null e.g. this.twitter = null
     let data;
-    let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+    // let headers = new Headers();
+    //     headers.append('Content-Type', 'application/json');
           console.log("this.twitter= "+this.twitter);
       if (this.twitter) {
         //If not null, set data to TWITTER_KEY
@@ -31,9 +31,14 @@ export class SocialService {
             return Observable.of(data);
             }else{
               //If null reach out to server
-              return this.http.get(this.url+'twitter/gettweets', {headers: headers})
-                  .map((response: Response) => {
-                    let data = response.json();
+              const httpOptions = {
+                headers: new HttpHeaders({
+                 'Content-Type': 'application/json',
+               })
+             };
+              return this.http.get(this.url+'twitter/gettweets', httpOptions)
+                  .map((response) => {
+                    let data = response;
                       console.log(data);
                       //  if we are on the server, after fetching the data we want
                       // to store it so that it gets transfered back to the client.
@@ -42,7 +47,7 @@ export class SocialService {
                       }
                     return data;
                   })
-                  .catch((error: Response) =>  Observable.throw(error.json()) )
+                  .catch((error) =>  Observable.throw(error.json()) )
 
             }
       }

@@ -65,10 +65,10 @@
     }
   
     footer{
-      height: 250px
+      height: 150px
     }
     footer address, .copyright{
-      text-align: center;
+      /* text-align: center; */
       padding-right: 0;
     }
     footer address{
@@ -87,13 +87,8 @@
       padding-left: 60px;
     }
   }
-  @media (max-width: 768px){
-  
-  }
-  @media (min-width: 768px){
-   
-  
-  }
+
+
   @media (max-width: 550px){
     .navbar-header a{
       width:60%

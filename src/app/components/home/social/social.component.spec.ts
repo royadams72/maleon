@@ -1,5 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 
+import { DivPositionsService } from '../../../services/div-positions.service';
+import { SocialService } from '../../../services/social.service';
 import { SocialComponent } from './social.component';
 
 describe('SocialComponent', () => {
@@ -8,7 +12,9 @@ describe('SocialComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SocialComponent ]
+      declarations: [ SocialComponent ],
+      providers:[SocialService, DivPositionsService],
+      imports:[HttpClientModule, BrowserTransferStateModule]
     })
     .compileComponents();
   }));

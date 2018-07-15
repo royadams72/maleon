@@ -29,8 +29,8 @@ footer {
     font-size: 1.1rem;
   }
   .aat{
-    width: 232px;
-    height: 80px;
+    /* width: 232px;
+    height: 80px; */
     padding-left: 30px
   }
   .aat img{
@@ -40,7 +40,7 @@ footer {
     padding:0;
     font-size: 1.1rem;
     line-height: 1.5rem;
-    margin-left: -10px;
+    margin-left: 5px;
   }
   footer .noPadding{
     padding: 0!important

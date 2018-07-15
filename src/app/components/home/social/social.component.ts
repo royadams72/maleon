@@ -52,6 +52,6 @@ export class SocialComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnDestroy() {
-    this.conn.unsubscribe();
+    // this.conn.unsubscribe();
   }
 }

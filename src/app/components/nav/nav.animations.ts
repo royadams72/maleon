@@ -37,8 +37,7 @@ export const NavUl = trigger('ulState', [
   state('active', style({
     'display':'block',
     'opacity': 1,
-    'transform': 'translateY(0)',
-     offset: 1.0
+    'transform': 'translateY(0)'
   })),
 
   transition('inActive <=> active', [
@@ -49,6 +48,6 @@ export const NavUl = trigger('ulState', [
 
   transition('active => inActive', [
     animate('200ms ease-out'),
-    style({'display':'none', offset: 1.0})
+    style({'display':'none'})
   ])
 ]);

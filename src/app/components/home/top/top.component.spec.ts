@@ -1,17 +1,17 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
+import { DivPositionsService } from '../../../services/div-positions.service';
 import { TopComponent } from './top.component';
 
-describe('HeaderComponent', () => {
+describe('TopComponent', () => {
   let component: TopComponent;
   let fixture: ComponentFixture<TopComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopComponent ]
+      declarations: [ TopComponent ],
+      providers:[DivPositionsService]
     })
     .compileComponents();
   }));

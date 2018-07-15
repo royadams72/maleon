@@ -1,5 +1,6 @@
 @import url('styles/header-nav.css');
 @import url('styles/footer.css');
+@import url('styles/sections.css');
 @import url('styles/media-queries.css');
 /*-------------------------------------------------- */
  html {
@@ -33,6 +34,9 @@
   width:100%;
   padding: 10px 0 80px 0;
 
+}
+#social{
+  padding-bottom: 150px
 }
 #services h2, #social h2, #contact h2,  #top h2{
   font-size: 5rem;

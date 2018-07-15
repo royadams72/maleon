@@ -66,11 +66,11 @@ MIT
 MIT
 MIT
 
-@angular/http@5.2.11
+@angular/forms@5.2.11
 MIT
 MIT
 
-@angular/forms@5.2.11
+@angular/http@5.2.11
 MIT
 MIT
 

@@ -17,31 +17,24 @@ export class NavComponent implements AfterViewInit {
   public socialActive: string = 'default';
   public aboutActive: string = 'default';
   private conn: any;
-  private top: number = 0;
   private services: number = 0;
-  private contact: number = 0;
-  private social: number = 0;
   public navBgActiveState: string = 'inActive';
   public servicesNavState: string = 'inActive';
   public defaultNavState: string = 'active';
   private homePageActive: boolean = false;
   private padding: number = 30;
-  private sectionArr: Array<number> = [];
-  private easingLogic: any;
   public dataTarget: string = 'none';
   public dataToggle: string = 'none';
   @ViewChild('nav') nav: ElementRef;
 
   constructor(public renderer: Renderer2,
     private divPosService: DivPositionsService,
-    private router: Router,
-    @Inject(DOCUMENT) private document: any) {
+    private router: Router) {
     //Listens for router events, checks if hash tag is present
     this.conn = this.router.events
       .filter(event => event instanceof NavigationEnd)//NavigationEnd is 3rd/last event fired
       .subscribe((p) => {
         let page = p['url'];
-
         let homepages = page.search(/#contact|#services|#social/);
         // console.log(homepages)
         if (homepages != -1 || page == "/") {
@@ -54,7 +47,6 @@ export class NavComponent implements AfterViewInit {
           this.switchNav('active', 'inActive')
           this.navBgActiveState = 'active';
           // console.log('this.navBgActiveState=active')
-
         }
       });
   }

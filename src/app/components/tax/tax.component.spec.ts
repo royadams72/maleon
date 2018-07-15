@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { PageScrollService } from 'ngx-page-scroll';
 
 import { TaxComponent } from './tax.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('TaxComponent', () => {
   let component: TaxComponent;
@@ -8,7 +10,9 @@ describe('TaxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TaxComponent ]
+      declarations: [ TaxComponent ],
+      imports:[RouterTestingModule],
+      providers:[PageScrollService]
     })
     .compileComponents();
   }));

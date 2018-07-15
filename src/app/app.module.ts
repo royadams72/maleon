@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import {NgxPageScrollModule, PageScrollService, PageScrollConfig} from 'ngx-page-scroll';
@@ -24,6 +25,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactService } from './services/contact.service';
 import { LegalsComponent } from './components/legals/legals.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,8 @@ import { LegalsComponent } from './components/legals/legals.component';
     ReactiveFormsModule,
     HttpModule,
     routing,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    HttpClientModule
   ],
   providers: [SocialService, DivPositionsService, WindowRef, ContactService, PageScrollService],
   bootstrap: [AppComponent],

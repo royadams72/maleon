@@ -69,7 +69,8 @@ export class ContactComponent implements OnInit, AfterViewInit {
                    message: message.value,
                    phone: phoneStr
                    }
-        this.contactService.sendMail(contact).subscribe((response)=>{
+        this.contactService.sendMail(contact)
+            .subscribe((response)=>{
           if(response.msg == 'sent'){
             this.sucess = response.sucess;
             this.contactForm.reset();

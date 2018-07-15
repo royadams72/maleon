@@ -1,3 +1,4 @@
-export class Section {
-  constructor(public name:string, public height:number){}
+export interface Section {
+   name:string, 
+   height:number
 }

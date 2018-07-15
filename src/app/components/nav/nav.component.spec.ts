@@ -10,15 +10,24 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { routing } from '../../app.routing';
 import { NavComponent } from './nav.component';
+import { AboutComponent } from '../about/about.component';
+import { RouterTestingModule } from '../../../../node_modules/@angular/router/testing';
+import { BrowserAnimationsModule } from '../../../../node_modules/@angular/platform-browser/animations';
 
 describe('NavComponent', () => {
   let component: NavComponent;
   let fixture: ComponentFixture<NavComponent>;
-
+  class SimpleCmp{}
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NavComponent],
-      imports: [FormsModule, ReactiveFormsModule, NgxPageScrollModule, routing],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        NgxPageScrollModule,
+        RouterTestingModule.withRoutes([
+        { path: '', component: SimpleCmp }]),
+        BrowserAnimationsModule],
       providers: [DivPositionsService, PageScrollService]
     })
       .compileComponents();

@@ -1,11 +1,8 @@
 import { Component, OnInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { Router, ActivatedRoute } from '@angular/router';
-import { SocialComponent } from './social/social.component';
-import { ServicesComponent } from './companyservices/services.component';
-import { TopComponent } from './top/top.component';
-import { ContactComponent } from './contact/contact.component';
+import { isPlatformBrowser } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+
 import { WindowRef } from '../../services/windowRef';
 
 //ContactComponent

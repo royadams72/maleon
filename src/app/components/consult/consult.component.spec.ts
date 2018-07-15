@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {NgxPageScrollModule, PageScrollService, PageScrollConfig} from 'ngx-page-scroll';
 import { ConsultComponent } from './consult.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ConsultComponent', () => {
   let component: ConsultComponent;
@@ -8,7 +9,9 @@ describe('ConsultComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConsultComponent ]
+      declarations: [ ConsultComponent ],
+      imports:[NgxPageScrollModule, RouterTestingModule],
+      providers:[PageScrollService]
     })
     .compileComponents();
   }));
@@ -19,7 +22,7 @@ describe('ConsultComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });
