@@ -20,12 +20,12 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [
-         "../node_modules/jquery/dist/jquery.min.js",
-          "../node_modules/bootstrap/dist/js/bootstrap.js"
-        ],
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -33,25 +33,30 @@
       }
     },
     {
-            "root": "src",
-            "outDir": "dist-server",
-            "assets": ["assets", "favicon.ico"],
-            "index": "index.html",
-            "main": "server.main.ts",
-            "platform": "server",
-            "polyfills": "polyfills.ts",
-            "test": "test.ts",
-            "tsconfig": "tsconfig.server.json",
-            "testTsconfig": "tsconfig.spec.json",
-            "prefix": "app",
-            "styles": ["styles.css"],
-            "scripts": [],
-            "environmentSource": "environments/environment.ts",
-            "environments": {
-                "dev": "environments/environment.ts",
-                "prod": "environments/environment.prod.ts"
-            }
-        }
+      "root": "src",
+      "outDir": "dist-server",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "platform": "server",
+      "index": "index.html",
+      "main": "server.main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.server.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
   ],
   "e2e": {
     "protractor": {
@@ -75,7 +80,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "sass",
+    "component": {
+    }
   }
 }

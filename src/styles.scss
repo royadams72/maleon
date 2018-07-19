@@ -1,8 +1,8 @@
-@import url('styles/header-nav.css');
-@import url('styles/footer.css');
-@import url('styles/sections.css');
-@import url('styles/media-queries.css');
-/*-------------------------------------------------- */
+@import 'styles/header-nav.scss';
+@import 'styles/footer.scss';
+@import 'styles/sections.scss';
+@import 'styles/media-queries.scss';
+
  html {
    position: relative;
    min-height: 100%;
