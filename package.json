@@ -9,6 +9,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node index.js",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.json",
     "build:universal":"ng build --prod && ng build --prod --app 1 --output-hashing none",
     "build:es2015": "node node_modules/babel-cli/bin/babel.js node_modules/ngx-page-scroll/ --out-dir node_modules/ngx-page-scroll/ --presets es2015",
     "postinstall": "npm run build:es2015  &&  npm run build:universal",
