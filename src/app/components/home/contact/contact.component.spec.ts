@@ -65,12 +65,12 @@ describe('ContactComponent', () => {
     .subscribe(results => {
       // expect(results).toBeDefined();
       //has to be what is returned by the function
-      console.log(results)
+      // console.log(results)
       expect(results).toEqual(successMsg);
       
 
     });
-    console.log(contactService)
+    // console.log(contactService)
   });
   
 });

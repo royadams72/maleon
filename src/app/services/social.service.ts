@@ -39,7 +39,7 @@ export class SocialService {
               return this.http.get(this.url+'twitter/gettweets', httpOptions)
                   .map((response) => {
                     let data = response;
-                      console.log(data);
+                      // console.log(data);
                       //  if we are on the server, after fetching the data we want
                       // to store it so that it gets transfered back to the client.
                      if (isPlatformServer(this.platformId)) {
@@ -47,7 +47,7 @@ export class SocialService {
                       }
                     return data;
                   })
-                  .catch((error) =>  Observable.throw(error.json()) )
+                  .catch((error) =>  Observable.throw(error) )
 
             }
       }
