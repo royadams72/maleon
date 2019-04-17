@@ -25,6 +25,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactService } from './services/contact.service';
 import { LegalsComponent } from './components/legals/legals.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LegalsComponent } from './components/legals/legals.component';
     ConsultComponent,
     HomeComponent,
     AboutComponent,
-    LegalsComponent
+    LegalsComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

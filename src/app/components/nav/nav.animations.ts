@@ -46,8 +46,8 @@ export const NavUl = trigger('ulState', [
   ])
   ,
 
-  transition('active => inActive', [
-    animate('200ms ease-out'),
-    style({'display':'none'})
-  ])
+  // transition('active => inActive', [
+  //   animate('200ms ease-out'),
+  //   style({'display':'none'})
+  // ])
 ]);
