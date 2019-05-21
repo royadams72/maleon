@@ -1,5 +1,5 @@
 .section1, .section2{
-    background: url(/assets/shared/bgContact.jpg) no-repeat center center;
+    background: url(/assets/shared/bgContact.jpg) no-repeat top center / cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -22,7 +22,7 @@
     }
   }
   .section2{
-    background: url(/assets/shared/bgContrast.jpg) no-repeat center center;
+    background: url(/assets/shared/bgContrast.jpg) no-repeat top center / cover;
     color: #080253;
     border: 1px solid #080253;
   }

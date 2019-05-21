@@ -10,9 +10,6 @@ import { CustomUtilsService } from './services/custom-utils.service';
 
 })
 export class AppComponent {
- 
-
-
   constructor(private locationStrategy: LocationStrategy) {
      PageScrollConfig.defaultDuration = 400;
      PageScrollConfig.defaultEasingLogic = {

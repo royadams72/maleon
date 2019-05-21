@@ -27,6 +27,7 @@ import { ContactService } from './services/contact.service';
 import { LegalsComponent } from './components/legals/legals.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { CustomUtilsService } from './services/custom-utils.service';
+import { ScrolltoTopComponent } from './common/shared/scrollto-top/scrollto-top.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { CustomUtilsService } from './services/custom-utils.service';
     HomeComponent,
     AboutComponent,
     LegalsComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    ScrolltoTopComponent
   ],
   imports: [
     BrowserModule,
