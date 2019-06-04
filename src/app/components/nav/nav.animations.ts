@@ -30,18 +30,18 @@ export const NavBg = trigger('NavBgState', [
 ]);
 export const NavUl = trigger('ulState', [
   state('inActive', style({
-    'display':'none',
+    'display': 'none',
     'opacity': 0,
-    'transform': 'translateY(-25px)'
+    'transform': 'translateY(-25px) rotate(-180deg)'
    })),
   state('active', style({
-    'display':'block',
+    'display': 'block',
     'opacity': 1,
-    'transform': 'translateY(0)'
+    'transform': 'translateY(0) rotate(-180deg)'
   })),
 
   transition('inActive <=> active', [
-    style({'transform': 'translateY(25px)'}),
+    style({'transform': 'translateY(25px) rotate(-180deg)'}),
     animate('500ms ease-out')
   ])
   ,

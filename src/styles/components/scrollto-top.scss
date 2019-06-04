@@ -1,0 +1,25 @@
+$scroll-img: url('assets/shared/up-arrow.svg');
+$widthXY: 50px;
+
+.scrollto-top {
+    position: fixed;
+    bottom: 200px;
+    height: $widthXY;
+    width: $widthXY;
+    right: 15px;
+    cursor: pointer;
+    @include large {
+        bottom: 130px;     
+    }
+  
+    
+    &__img {
+     
+        background-image: $scroll-img;
+        background-repeat: no-repeat;
+        background-size: $widthXY;
+        background-position: center; 
+        height: inherit;
+        width: inherit;
+    }
+}

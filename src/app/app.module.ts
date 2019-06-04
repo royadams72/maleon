@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
 
-import {NgxPageScrollModule, PageScrollService, PageScrollConfig} from 'ngx-page-scroll';
+import { NgxPageScrollModule, PageScrollService, PageScrollConfig} from 'ngx-page-scroll';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/home/contact/contact.component';
@@ -26,6 +26,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactService } from './services/contact.service';
 import { LegalsComponent } from './components/legals/legals.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { CustomUtilsService } from './services/custom-utils.service';
+import { ScrolltoTopComponent } from './common/shared/scrollto-top/scrollto-top.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
     HomeComponent,
     AboutComponent,
     LegalsComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    ScrolltoTopComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,7 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
     NgxPageScrollModule,
     HttpClientModule
   ],
-  providers: [SocialService, DivPositionsService, WindowRef, ContactService, PageScrollService],
+  providers: [SocialService, DivPositionsService, WindowRef, ContactService, PageScrollService, CustomUtilsService],
   bootstrap: [AppComponent],
    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

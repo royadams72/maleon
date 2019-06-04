@@ -1,5 +1,5 @@
-.section1, .section2{
-    background: url(/assets/shared/bgContact.jpg) no-repeat center center;
+.section1, .section2 {
+    background: url(/assets/shared/bgContact.jpg) no-repeat top center / cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -11,8 +11,18 @@
     text-align: left;
     margin-bottom: 30px;
   }
+
+  .link {
+    color: #fdfeff;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   .section2{
-    background: url(/assets/shared/bgContrast.jpg) no-repeat center center;
+    background: url(/assets/shared/bgContrast.jpg) no-repeat top center / cover;
     color: #080253;
     border: 1px solid #080253;
   }
@@ -54,9 +64,7 @@
    .section2 a{
      color: #fff;
    }
-  .last-section{
-    margin-bottom: 50px
-  }
+ 
    .li-xtra-pad  ul li{
      padding-top: 12px;
      padding-right: 10px;

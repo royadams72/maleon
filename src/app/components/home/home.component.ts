@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { WindowRef } from '../../services/windowRef';
 
-//ContactComponent
+// ContactComponent
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   pageTitle: string;
   pageDescription: string;
   public theWinHeight: number;
-
+  public theWinWidth: number;
   constructor(private renderer: Renderer2,
     private winRef: WindowRef,
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -23,8 +23,7 @@ export class HomeComponent implements OnInit {
     private title: Title,
     private meta: Meta) {
     if (isPlatformBrowser(this.platformId)) {
-      this.theWinHeight = this.winRef.nativeWindow.innerHeight
-      // console.log(this.theWinHeight)
+       this.theWinHeight = this.winRef.nativeWindow.innerHeight
     }
   }
 
@@ -43,10 +42,8 @@ export class HomeComponent implements OnInit {
     this.meta.addTag({ name: 'twitter:text:description', content: this.pageDescription });
     this.meta.addTag({ name: 'twitter:image', content: 'https://pbs.twimg.com/profile_images/596590359083384832/nsvzSPFT_normal.jpg' });
     this.renderer.listen('window', 'resize', (evt) => {
-      //  console.log('Native window obj', this.winRef.nativeWindow.innerHeight);
       this.theWinHeight = this.winRef.nativeWindow.innerHeight;
-
-
+      this.theWinWidth = this.winRef.nativeWindow.innerWidth;
     })
 
   }

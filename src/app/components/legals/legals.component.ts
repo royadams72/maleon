@@ -20,7 +20,7 @@ export class LegalsComponent implements OnInit {
               private title: Title,
               private meta: Meta) { }
 
-  ngOnInit(){
+  ngOnInit() {
       this.pageTitle = this.activatedRoute.snapshot.data.title;
       this.pageDescription = this.activatedRoute.snapshot.data.description;
       this.title.setTitle(this.pageTitle);
@@ -28,12 +28,13 @@ export class LegalsComponent implements OnInit {
         name: 'description', content: this.pageDescription
       })
       if (isPlatformBrowser(this.platformId)) {
-      // Client only code.
-      let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: this.document, scrollTarget: '.container',pageScrollOffset:100, pageScrollDuration:0});
-          this.pageScrollService.start(pageScrollInstance);
-          console.log(isPlatformBrowser(this.platformId), this.platformId)
+        // Client only code.
+        const pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({
+          document: this.document, scrollTarget: '.container', pageScrollOffset: 100, pageScrollDuration: 0
+        });
+        this.pageScrollService.start(pageScrollInstance);
 
-        }
       }
+  }
 
 }
