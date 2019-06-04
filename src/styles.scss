@@ -1,6 +1,5 @@
 
 @import 'styles/utils/media-queries.scss';
-
 @import 'styles/components/header-nav.scss';
 @import 'styles/components/footer.scss';
 @import 'styles/components/sections.scss';
@@ -45,13 +44,13 @@
   padding-bottom: 150px
 }
 #services h2, #social h2, #contact h2,  #top h2{
-  font-size: 5rem;
+  // font-size: 5rem;
   padding-bottom: 20px;
   padding-top: 40px;
   text-align:center;
 }
 
-#services h3, #social h3, #contact h3,  #top h3{
+ #social h3, #contact h3,  #top h3{
   font-size: 3.5rem;
   padding-bottom: 20px;
   text-align:center;
@@ -117,9 +116,13 @@
   padding: 0!important
 }
 /*Services*************************************/
-.services-container{
+.main-container{
   margin-top:100px;
-  margin-bottom:100px;
+  margin-bottom: 200px;
+  
+  @include large {
+      margin-bottom: 100px;
+  }
 }
 .page-header{
   margin: 0 0 10px;
@@ -132,9 +135,17 @@
   float: left;
   margin-top: 6px;
 }
+
+#services {
+  & h3{
+    font-size: 1.4rem;
+      @include medium {
+        font-size: 3.5rem;
+      }
+  }
+}
+
 .header-img{
-  /* width: 70px;
-  height: 70px; */
   display: inline;
 }
 

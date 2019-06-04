@@ -58,19 +58,17 @@ describe('ContactComponent', () => {
     message: 'Test message',
     phone: 'Test phone'
     }
-    console.log(contactService)
     contactService.sendMail.and.returnValue(Observable.of(successMsg));
     expect(contactService).toBeDefined()
     contactService.sendMail(contact)
     .subscribe(results => {
       // expect(results).toBeDefined();
-      //has to be what is returned by the function
+      // has to be what is returned by the function
       // console.log(results)
       expect(results).toEqual(successMsg);
-      
 
     });
     // console.log(contactService)
   });
-  
+
 });

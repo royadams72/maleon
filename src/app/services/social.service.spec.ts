@@ -26,10 +26,9 @@ describe('SocialService', () => {
   
   it('should get Tweets', () => {
     service.initTwitter()
-    .subscribe((response)=>{
+    .subscribe((response) => {
       expect(response).toBeDefined();
       expect(response).toEqual(returnedResults);
-      console.log(response)
     })
     const request = httpMock.expectOne(apiURL+'twitter/gettweets');
     expect(request.request.method).toEqual('GET');
@@ -42,7 +41,6 @@ describe('SocialService', () => {
     .subscribe(()=>{
     }, error =>{
       expect(error.error.type).toBe('ERROR_GETTING_TWEETS'); 
-      console.log(error.error.type) 
       Observable.throw(error)
     }
   ) 

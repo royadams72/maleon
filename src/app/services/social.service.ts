@@ -20,12 +20,10 @@ export class SocialService {
   //set this.twitter to TWITTER_KEY, but set default value to null e.g. this.twitter = null
     let data;
     // let headers = new Headers();
-    //     headers.append('Content-Type', 'application/json');
-          console.log("this.twitter= "+this.twitter);
+    // headers.append('Content-Type', 'application/json');
       if (this.twitter) {
         //If not null, set data to TWITTER_KEY
         data = this.transferState.get(TWITTER_KEY, null);
-        console.log("data= "+data);
             this.transferState.remove(TWITTER_KEY);
             //remove and return
             return Observable.of(data);

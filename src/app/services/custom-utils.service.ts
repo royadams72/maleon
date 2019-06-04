@@ -9,8 +9,7 @@ export class CustomUtilsService {
 
   constructor(@Inject(DOCUMENT) private document: any, private pageScrollService: PageScrollService, private windowRef: WindowRef) { }
   preventBrowserBackButton(locationStrategy: LocationStrategy, scrollY): void {
-    if (location.href.indexOf('#') !== -1){
-      console.log(location.href.split('#'))
+    if (location.href.indexOf('#') !== -1) {
       const container = `#${location.href.split('#')[1]}`;
       const pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({
               document: this.document, scrollTarget: container, pageScrollOffset: 10, pageScrollDuration: 0

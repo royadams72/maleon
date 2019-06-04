@@ -29,8 +29,6 @@ ngOnInit(){
     // Client only code.
     let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: this.document, scrollTarget: '.container',pageScrollOffset:100, pageScrollDuration:0});
         this.pageScrollService.start(pageScrollInstance);
-        console.log(isPlatformBrowser(this.platformId), this.platformId)
-
       }
 
 }

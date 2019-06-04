@@ -6,7 +6,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import { CustomUtilsService } from 'app/services/custom-utils.service';
 import { LocationStrategy } from '@angular/common';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 import { WindowRef } from 'app/services/windowRef';
 
 @Component({
@@ -22,6 +22,7 @@ export class NavComponent implements AfterViewInit {
   public aboutActive = 'default';
   private conn: Subscription;
   private services = 0;
+  public showMobileNav: string;
   public navBgActiveState = 'inActive';
   public servicesNavState = 'inActive';
   public defaultNavState = 'active';
@@ -45,7 +46,6 @@ export class NavComponent implements AfterViewInit {
       .subscribe((p) => {
         const page = p['url'];
         const homepages = page.search(/#contact|#services|#social/);
-        // console.log(homepages)
         if (homepages !== -1 || page === '/') {
           this.homePageActive = true;
           this.navBgActiveState = 'inActive';
@@ -54,9 +54,7 @@ export class NavComponent implements AfterViewInit {
           this.homePageActive = false;
           this.switchNav('active', 'inActive');
           this.navBgActiveState = 'active';
-          // console.log('this.navBgActiveState=active')
         }
-        console.log(this.windowRef.nativeWindow.offsetY, this.scrollY)
         this.customUtilsService.preventBrowserBackButton(this.locationStrategy, this.scrollY)
       });
   }
@@ -70,21 +68,17 @@ export class NavComponent implements AfterViewInit {
         this.services = divObjs[1].height - this.padding;
       }
     })
-    // console.log(document)
     this.renderer.listen('window', 'scroll', (evt) => {
       // Set vars to trigger animations depending on the position of window and div
-      // console.log(window.scrollY);
       this.scrollY = window.scrollY;
       if (window.scrollY >= this.services - this.padding && this.homePageActive) {
         if (this.navBgActiveState !== 'active') {
           this.navBgActiveState = 'active';
-          // console.log('active')
         }
 
       } else if (window.scrollY <= this.services - this.padding && this.homePageActive) {
         if (this.navBgActiveState !== 'inActive') {
           this.navBgActiveState = 'inActive'
-          // console.log('inActive')
         }
       }
     });
@@ -100,28 +94,36 @@ export class NavComponent implements AfterViewInit {
       }
     })
 
-
+  this.listenForResize();
   }
 
-  public switchNav(servicesNav, defaultNav) {
+  listenForResize() {
+    this.renderer.listen('window', 'resize', (evt) => {
+      const winWidth = evt.currentTarget.innerWidth;
+      if (winWidth >= 780) {
+        this.showMobileNav = 'block'
+      }
+    });
+  }
+
+  public switchNav(servicesNav: string, defaultNav: string) {
     // This sets states (changes the nav text) between the services nav and home page nav
-    // this.navBgActiveState = 'active';
     if (servicesNav === 'active') {
       setTimeout(() => {
         this.servicesNavState = servicesNav;
-        // console.log(bgState, servicesNav, defaultNav)
       }, 700);
       this.defaultNavState = defaultNav;
 
     } else if (defaultNav === 'active') {
       setTimeout(() => {
         this.defaultNavState = defaultNav;
-        // console.log(bgState, servicesNav, defaultNav)
       }, 700);
       this.servicesNavState = servicesNav;
-
     }
-    // console.log()
+  }
+
+  public toggleNav() {
+    this.showMobileNav === 'none' ? this.showMobileNav = 'block' : this.showMobileNav = 'none';
   }
 
 }
