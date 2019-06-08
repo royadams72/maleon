@@ -1,11 +1,11 @@
-import { Component, Renderer2, Input, OnChanges, ViewChild, ElementRef, AfterViewInit, Inject } from '@angular/core';
+import { Component, Renderer2, Input, OnChanges, ViewChild, ElementRef, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { DivPositionsService } from '../../services/div-positions.service';
 import { NavBg, NavUl } from './nav.animations';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import { CustomUtilsService } from 'app/services/custom-utils.service';
-import { LocationStrategy } from '@angular/common';
+import { LocationStrategy, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
 import { WindowRef } from 'app/services/windowRef';
 
@@ -30,6 +30,7 @@ export class NavComponent implements AfterViewInit {
   private padding = 30;
   public dataTarget = 'none';
   public dataToggle = 'none';
+  theWinHeight: number;
   @ViewChild('nav') nav: ElementRef;
   scrollY: number;
   constructor(
@@ -38,7 +39,8 @@ export class NavComponent implements AfterViewInit {
     private router: Router,
     private locationStrategy: LocationStrategy,
     private customUtilsService: CustomUtilsService,
-    private windowRef: WindowRef) {
+    private windowRef: WindowRef,
+    @Inject(PLATFORM_ID) private platformId: Object) {
 
     // Listens for router events, checks if hash tag is present
     this.conn = this.router.events
@@ -55,46 +57,40 @@ export class NavComponent implements AfterViewInit {
           this.switchNav('active', 'inActive');
           this.navBgActiveState = 'active';
         }
+        if (isPlatformBrowser(this.platformId)) {
         this.customUtilsService.preventBrowserBackButton(this.locationStrategy, this.scrollY)
+        }
       });
   }
 
 
   ngAfterViewInit() {
-    // Easing for page scroller
-    this.divPosService.heightsObjs.subscribe(divObjs => {
-      // get the position of divs
-      if (divObjs.length === 4) {
-        this.services = divObjs[1].height - this.padding;
-      }
-    })
-    this.renderer.listen('window', 'scroll', (evt) => {
-      // Set vars to trigger animations depending on the position of window and div
-      this.scrollY = window.scrollY;
-      if (window.scrollY >= this.services - this.padding && this.homePageActive) {
-        if (this.navBgActiveState !== 'active') {
-          this.navBgActiveState = 'active';
-        }
+    this.getScrollYAndSetNavBg();
+    this.getWindowHeight();
+    this.listenForResize();
+  }
 
-      } else if (window.scrollY <= this.services - this.padding && this.homePageActive) {
-        if (this.navBgActiveState !== 'inActive') {
-          this.navBgActiveState = 'inActive'
-        }
+getScrollYAndSetNavBg(): void {
+  this.renderer.listen('window', 'scroll', (evt) => {
+    // Set vars to trigger animations depending on the position of window and div
+    this.scrollY = window.scrollY;
+      if (window.scrollY >= this.theWinHeight - this.padding && this.homePageActive) {
+      if (this.navBgActiveState !== 'active') {
+        this.navBgActiveState = 'active';
       }
-    });
 
-    this.renderer.listen('window', 'load', (evt) => {
-      const winWidth = evt.currentTarget.innerWidth;
-      if (winWidth <= 1000) {
-        this.dataTarget = '.navbar-collapse';
-        this.dataToggle = 'collapse';
-      } else {
-        this.dataTarget = 'none';
-        this.dataToggle = 'none';
+    } else if (window.scrollY <= this.theWinHeight - this.padding && this.homePageActive) {
+      if (this.navBgActiveState !== 'inActive') {
+        this.navBgActiveState = 'inActive'
       }
-    })
+    }
+  });
+}
 
-  this.listenForResize();
+  getWindowHeight(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.theWinHeight = this.windowRef.nativeWindow.innerHeight;
+    }
   }
 
   listenForResize() {

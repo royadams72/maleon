@@ -26,13 +26,9 @@ export class ContactComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.divPosService.updateObj('contact', this.contactDiv.nativeElement.offsetTop);
   }
 
   ngOnInit() {
-    this.renderer.listen('window', 'resize', (evt) => {
-    this.divPosService.updateObj('contact', this.contactDiv.nativeElement.offsetTop);
-    })
     this.initForm();
   }
 

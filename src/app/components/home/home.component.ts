@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   pageDescription: string;
   public theWinHeight: number;
   public theWinWidth: number;
+
   constructor(private renderer: Renderer2,
     private winRef: WindowRef,
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
     private title: Title,
     private meta: Meta) {
     if (isPlatformBrowser(this.platformId)) {
-       this.theWinHeight = this.winRef.nativeWindow.innerHeight
+       this.theWinHeight = this.winRef.nativeWindow.innerHeight;
     }
   }
 

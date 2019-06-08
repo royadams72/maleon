@@ -20,7 +20,7 @@ export class ScrolltoTopComponent implements OnInit {
     })
   }
 
-  checkDistanceFromTop(scrollY) {
+  checkDistanceFromTop(scrollY: number) {
     return scrollY >  100 ? this.showBackToTop = true : this.showBackToTop = false;
   }
 

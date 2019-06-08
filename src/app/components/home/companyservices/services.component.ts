@@ -11,13 +11,10 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   constructor(private renderer: Renderer2, private divPosService: DivPositionsService) { }
 
   ngAfterViewInit() {
-      this.divPosService.updateObj('services', this.servicesDiv.nativeElement.offsetTop);
   }
 
   ngOnInit() {
-    this.renderer.listen('window', 'resize', (evt) => {
-    this.divPosService.updateObj('services', this.servicesDiv.nativeElement.offsetTop);
-    })
+
   }
 
 

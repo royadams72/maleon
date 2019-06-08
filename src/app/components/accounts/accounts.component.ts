@@ -17,7 +17,8 @@ export class AccountsComponent implements OnInit {
                 @Inject(PLATFORM_ID) private platformId: Object,
                 private activatedRoute: ActivatedRoute,
                 private title: Title,
-                private meta: Meta) { }
+                private meta: Meta,
+                private router: Router) { }
 ngOnInit(){
   this.pageTitle = this.activatedRoute.snapshot.data.title;
   this.pageDescription = this.activatedRoute.snapshot.data.description;
@@ -27,10 +28,14 @@ ngOnInit(){
   })
     if (isPlatformBrowser(this.platformId)) {
     // Client only code.
-    let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: this.document, scrollTarget: '.container',pageScrollOffset:100, pageScrollDuration:0});
+    const pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({
+      document: this.document, scrollTarget: '.container', pageScrollOffset: 100, pageScrollDuration: 150});
         this.pageScrollService.start(pageScrollInstance);
+        console.log('jumping')
       }
 
 }
-
+jumpToContact(): void {
+  this.router.navigateByUrl('/#contact');
+}
 }

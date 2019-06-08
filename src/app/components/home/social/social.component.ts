@@ -22,8 +22,6 @@ export class SocialComponent implements OnInit, OnDestroy, AfterViewInit {
     private divPosService: DivPositionsService) { }
 
   ngAfterViewInit() {
-    // console.log("social= "+this.socialDiv.nativeElement.offsetTop)
-    this.divPosService.updateObj("social", this.socialDiv.nativeElement.offsetTop);
   }
 
   ngOnInit() {
@@ -40,15 +38,12 @@ export class SocialComponent implements OnInit, OnDestroy, AfterViewInit {
             date.push(year);
             date = date.join(' ');
             tweets[i].created_at = date;
-            //console.log(tweets[i].created_at)
+            // console.log(tweets[i].created_at)
             this.tweetsArray.push(tweets[i]);
           }
         }
       });
 
-    this.renderer.listen('window', 'resize', (evt) => {
-      this.divPosService.updateObj("social", this.socialDiv.nativeElement.offsetTop);
-    })
   }
 
   ngOnDestroy() {

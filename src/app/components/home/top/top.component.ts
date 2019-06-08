@@ -16,7 +16,7 @@ export class TopComponent implements OnInit, AfterViewInit, OnChanges {
 
   constructor(private renderer: Renderer2, private divPosService: DivPositionsService) {}
 
-  ngOnChanges(changes) {
+  ngOnChanges() {
     // When the window is resized the input variable is updated
     // So the height of this div can also be...
     if (this.winW >= 780) {
@@ -27,14 +27,9 @@ export class TopComponent implements OnInit, AfterViewInit, OnChanges {
   ngAfterViewInit() {
     // call service function after html has loaded, so correct dimensions of div can be accessed//
     // To relate div heights to application for nav
-    this.divPosService.updateObj('top', this.topDiv.nativeElement.offsetTop);
     this.winHeight = this.winH;
   }
   ngOnInit() {
-    // on window resize call function to update app
-    this.renderer.listen('window', 'resize', (evt) => {
-    this.divPosService.updateObj('top', this.topDiv.nativeElement.offsetTop);
-    })
 
   }
 

@@ -32,7 +32,7 @@
             </ul>
           </span>
 
-
+         
         <button type="button" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" [routerLink]="['/']" href='#contact' class="btn btn-lg margin20Left" name="button">Contact us</button>
 
     </div>
@@ -67,6 +67,8 @@
       <p>
         Depending on the type of business you have, Ma’Leon Accountancy Services Limited will fulfil the statutory responsibilities and file the accounts with government regulated bodies such as Company House (if a private limited company), the Charity Commission (if a charity) and HMRC within a specific time frame.
       </p>
+      <div (click)="jumpToContact()">Contact Us</div>
+      <br>
           <button type="button" [routerLink]="['/']" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" href='#contact' class="btn btn-lg margin20Left" name="button">Contact us</button>
     </div>
   </div>

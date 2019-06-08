@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { Section } from '../models/section.model'
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class DivPositionsService {
