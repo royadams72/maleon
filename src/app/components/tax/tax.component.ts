@@ -3,36 +3,37 @@ import { DOCUMENT , isPlatformBrowser, isPlatformServer} from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
+import { ScrollService } from 'app/services/scroll.service';
+
 @Component({
   selector: 'app-tax',
   templateUrl: './tax.component.html',
   styleUrls: ['./tax.component.css']
 })
 export class TaxComponent implements OnInit{
-  pageTitle:string;
-  pageDescription:string;
+  pageTitle: string;
+  pageDescription: string;
   constructor(@Inject(DOCUMENT) private document: any,
-              private pageScrollService: PageScrollService,
               @Inject(PLATFORM_ID) private platformId: Object,
               private activatedRoute: ActivatedRoute,
               private title: Title,
-              private meta: Meta) { }
-ngOnInit(){
-  this.pageTitle = this.activatedRoute.snapshot.data.title;
-  this.pageDescription = this.activatedRoute.snapshot.data.description;
-  this.title.setTitle(this.pageTitle);
-  this.meta.updateTag({
-    name: 'description', content: this.pageDescription
-  })
+              private meta: Meta,
+              private scrollService: ScrollService) { }
 
-  if (isPlatformBrowser(this.platformId)) {
-  // Client only code.
-  let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: this.document, scrollTarget: '.container',pageScrollOffset:100, pageScrollDuration:0});
-      this.pageScrollService.start(pageScrollInstance);
+    ngOnInit() {
+      this.pageTitle = this.activatedRoute.snapshot.data.title;
+      this.pageDescription = this.activatedRoute.snapshot.data.description;
+      this.title.setTitle(this.pageTitle);
+      this.meta.updateTag({
+        name: 'description', content: this.pageDescription
+      })
+  }
+
+  public scrollTo(target: string, offset: number = 0): void {
+    const t = setTimeout(() => {
+      this.scrollService.scrollToEl(target, offset);
+      clearTimeout(t);
+     }, 100)
 
     }
-
-}
-
 }

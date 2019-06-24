@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
 import { ActivatedRoute } from '@angular/router';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 @Component({
@@ -13,7 +12,6 @@ export class PrivacyPolicyComponent implements OnInit {
   pageTitle: string;
   pageDescription: string;
   constructor(@Inject(DOCUMENT) private document: any,
-    private pageScrollService: PageScrollService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private activatedRoute: ActivatedRoute,
     private title: Title,
@@ -27,16 +25,5 @@ export class PrivacyPolicyComponent implements OnInit {
       name: 'description', content: this.pageDescription
     });
 
-    if (isPlatformBrowser(this.platformId)) {
-      // Client only code.
-      const pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance
-      ({ document: this.document,
-          scrollTarget: '.container',
-          pageScrollOffset: 100,
-          pageScrollDuration: 0 });
-
-      this.pageScrollService.start(pageScrollInstance);
-
-    }
   }
 }

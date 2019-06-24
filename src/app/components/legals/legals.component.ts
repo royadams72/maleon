@@ -3,7 +3,7 @@ import { DOCUMENT , isPlatformBrowser, isPlatformServer} from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
+
 @Component({
   selector: 'app-legals',
   templateUrl: './legals.component.html',
@@ -14,7 +14,6 @@ export class LegalsComponent implements OnInit {
   pageDescription:string;
   public date = new Date();
   constructor(@Inject(DOCUMENT) private document: any,
-              private pageScrollService: PageScrollService,
               @Inject(PLATFORM_ID) private platformId: Object,
               private activatedRoute: ActivatedRoute,
               private title: Title,
@@ -27,14 +26,7 @@ export class LegalsComponent implements OnInit {
       this.meta.updateTag({
         name: 'description', content: this.pageDescription
       })
-      if (isPlatformBrowser(this.platformId)) {
-        // Client only code.
-        const pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({
-          document: this.document, scrollTarget: '.container', pageScrollOffset: 100, pageScrollDuration: 0
-        });
-        this.pageScrollService.start(pageScrollInstance);
 
-      }
   }
 
 }

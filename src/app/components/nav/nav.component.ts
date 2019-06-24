@@ -4,10 +4,10 @@ import { NavBg, NavUl } from './nav.animations';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';
-import { CustomUtilsService } from 'app/services/custom-utils.service';
 import { LocationStrategy, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
 import { WindowRef } from 'app/services/windowRef';
+import { ScrollService } from 'app/services/scroll.service';
 
 @Component({
   selector: 'app-nav',
@@ -16,76 +16,82 @@ import { WindowRef } from 'app/services/windowRef';
   animations: [NavBg, NavUl]
 })
 export class NavComponent implements AfterViewInit {
+
   public servicesActive = 'default';
   public contactActive = 'default';
   public socialActive = 'default';
   public aboutActive = 'default';
   private conn: Subscription;
-  private services = 0;
   public showMobileNav: string;
   public navBgActiveState = 'inActive';
   public servicesNavState = 'inActive';
   public defaultNavState = 'active';
   private homePageActive = false;
   private padding = 30;
-  public dataTarget = 'none';
-  public dataToggle = 'none';
+  private toggledFromButtonClick = false;
   theWinHeight: number;
-  @ViewChild('nav') nav: ElementRef;
   scrollY: number;
+  @ViewChild('nav') nav: ElementRef;
+
   constructor(
     public renderer: Renderer2,
     private divPosService: DivPositionsService,
     private router: Router,
     private locationStrategy: LocationStrategy,
-    private customUtilsService: CustomUtilsService,
     private windowRef: WindowRef,
-    @Inject(PLATFORM_ID) private platformId: Object) {
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: any,
+    private el: ElementRef,
+    private scrollService: ScrollService) {
 
     // Listens for router events, checks if hash tag is present
     this.conn = this.router.events
       .filter(event => event instanceof NavigationEnd)// NavigationEnd is 3rd/last event fired
       .subscribe((p) => {
         const page = p['url'];
-        const homepages = page.search(/#contact|#services|#social/);
+        const homepages = page.search(/contact|services|social/);
         if (homepages !== -1 || page === '/') {
           this.homePageActive = true;
           this.navBgActiveState = 'inActive';
           this.switchNav('inActive', 'active');
+          this.scrollTo(page);
         } else if (homepages === -1 || page !== '/') {
           this.homePageActive = false;
           this.switchNav('active', 'inActive');
           this.navBgActiveState = 'active';
-        }
-        if (isPlatformBrowser(this.platformId)) {
-        this.customUtilsService.preventBrowserBackButton(this.locationStrategy, this.scrollY)
+          setTimeout(() => {
+            window.scroll(0, 0);
+          });
         }
       });
+
+
   }
 
 
   ngAfterViewInit() {
     this.getScrollYAndSetNavBg();
     this.getWindowHeight();
-    this.listenForResize();
+    this.setNavOnResize();
+    this.setNavOnLoad();
   }
 
-getScrollYAndSetNavBg(): void {
-  this.renderer.listen('window', 'scroll', (evt) => {
-    // Set vars to trigger animations depending on the position of window and div
-    this.scrollY = window.scrollY;
+  private getScrollYAndSetNavBg(): void {
+    this.renderer.listen('window', 'scroll', (evt) => {
+      // Set vars to trigger animations depending on the position of window and div
+      this.scrollY = window.scrollY;
       if (window.scrollY >= this.theWinHeight - this.padding && this.homePageActive) {
-      if (this.navBgActiveState !== 'active') {
-        this.navBgActiveState = 'active';
-      }
+        if (this.navBgActiveState !== 'active') {
+          this.navBgActiveState = 'active';
+        }
 
-    } else if (window.scrollY <= this.theWinHeight - this.padding && this.homePageActive) {
-      if (this.navBgActiveState !== 'inActive') {
-        this.navBgActiveState = 'inActive'
+      } else if (window.scrollY <= this.theWinHeight - this.padding && this.homePageActive) {
+        if (this.navBgActiveState !== 'inActive') {
+          this.navBgActiveState = 'inActive'
+        }
       }
-    }
-  });
-}
+    });
+  }
 
   getWindowHeight(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -93,16 +99,26 @@ getScrollYAndSetNavBg(): void {
     }
   }
 
-  listenForResize() {
+  setNavOnResize() {
     this.renderer.listen('window', 'resize', (evt) => {
       const winWidth = evt.currentTarget.innerWidth;
-      if (winWidth >= 780) {
-        this.showMobileNav = 'block'
+      if (winWidth > 780) {
+        this.showMobileNav = 'block';
+        this.toggledFromButtonClick = false;
+      } else if (winWidth < 780 && !this.toggledFromButtonClick) {
+        this.showMobileNav = 'none';
       }
     });
   }
 
-  public switchNav(servicesNav: string, defaultNav: string) {
+  private setNavOnLoad(): void {
+    const winWidth = this.windowRef.nativeWindow.innerWidth;
+    if (winWidth <= 780) {
+      this.showMobileNav = 'none';
+    }
+  }
+
+  switchNav(servicesNav: string, defaultNav: string) {
     // This sets states (changes the nav text) between the services nav and home page nav
     if (servicesNav === 'active') {
       setTimeout(() => {
@@ -119,7 +135,22 @@ getScrollYAndSetNavBg(): void {
   }
 
   public toggleNav() {
+    this.toggledFromButtonClick = !this.toggledFromButtonClick;
     this.showMobileNav === 'none' ? this.showMobileNav = 'block' : this.showMobileNav = 'none';
   }
 
+  public scrollTo(target: string, offset: number = 0): void {
+    
+    if (isPlatformBrowser(this.platformId)) {
+      const t = setTimeout(() => {
+        if (target.indexOf('/') !== -1) {
+          target = `${target.replace('/', '')}`;
+        }
+        this.scrollService.scrollToEl(target, offset);
+        this.toggleNav();
+        // this.showMobileNav = 'none';
+        clearTimeout(t);
+      }, 100)
+    }
+  }
 }
