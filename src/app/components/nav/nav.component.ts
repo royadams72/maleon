@@ -147,7 +147,7 @@ export class NavComponent implements AfterViewInit {
           target = `${target.replace('/', '')}`;
         }
         this.scrollService.scrollToEl(target, offset);
-        this.toggleNav();
+        // this.toggleNav();
         // this.showMobileNav = 'none';
         clearTimeout(t);
       }, 100)
