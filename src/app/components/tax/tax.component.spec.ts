@@ -11,8 +11,8 @@ describe('TaxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ TaxComponent ],
-      imports:[RouterTestingModule],
-      providers:[PageScrollService]
+      imports: [RouterTestingModule],
+      providers: [PageScrollService]
     })
     .compileComponents();
   }));

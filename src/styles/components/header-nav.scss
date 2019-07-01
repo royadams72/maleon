@@ -7,65 +7,68 @@ $header-bg-image: url(/assets/shared/bgImage.png);
       border: 1px solid #000;
       float: right;
       transform: rotate(-180deg);
+      display: none;
+      top: 75px;
+      position: absolute;
+      right: 13px;
+
       & li{
         // float: left;
         transform: rotate(-180deg);
         width:100%;
         margin-left: 0;
       }
-  
-      &>li>a:link {
-        color: #fff;
-        background-color: transparent;
-        padding: 3px 15px
-
-      }
-      &>li>a:visited {
-        color: #fff;
-      }
-      &>li>a:hover {
-        color: #ffffff;
-      }
-  
-      &>li>a:active {
-        color: #fff;
-      }
-
-  
-    @include large {
-      &>li>a:link {
-        padding: 10px 15px
-      }
-    }
-   
+    
     @include medium {
-      top: 10px;
+      top: 25px;
       position: absolute;
       right: 20px;
       width: 60%;
       background-color: transparent;
       border: none;
-      opacity: 0;
+      display: block;
       margin-right: -10px;
       color: #fff;
       transform: rotate(180deg);
+
       & li {
         float: left;
         width: auto;
         margin-left: 0;
         transform: rotate(-180deg);
-        // margin-left: 20px
       }
-    
+      & li p {
+        margin: 0;
+      }
     }
+
+  }
+
+  .nav-link{
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 15px;
+
   }
 
   #navbar-ul {
     opacity: 1;
   }
 
-.navbar-toggle {
-  display: inline-block;
+.nav-toggle {
+  display: block;
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 15px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+
+  background-image: none;
+
+  border-radius: 4px;
   @include medium {
     display: none;
   }
@@ -78,12 +81,21 @@ $header-bg-image: url(/assets/shared/bgImage.png);
       color: #ccc!important;
   }
   
-  .navbar-toggle, .navbar-toggle:link, .navbar-toggle:visited, .navbar-toggle:hover, .navbar-toggle:active {
-    /*margin-right: 40px;*/
+  .nav-toggle, .nav-toggle:link, .nav-toggle:visited, .nav-toggle:hover, .nav-toggle:active {
     border: none;
     background-color: #6CA6C1!important;
   }
- 
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #888;
+  }
+
+  .icon-bar+.icon-bar {
+    margin-top: 4px;
+  }
   .navbar,.navbar-inverse, .navbar-collapse {
     background-color: inherit;
     border: none;
@@ -98,20 +110,26 @@ $header-bg-image: url(/assets/shared/bgImage.png);
     background-color: rgb(8, 2, 83);
     border: none;
     width: 100%;
-    height: 75px;
+    height:70px;
     margin: 0!important;
+
+    @include medium {
+      height: 100px;
+    }
   }
 
-  .navbar-header img {
-    margin-left:20px;
-   }
 
-  .navbar-brand {
+  .nav-brand {
     /*margin:10px 0 0 50px;*/
-    height: 55px;
-    display: block;
-    width: 344px;
-    padding: 10px 0 0 10px;
+    height: inherit;
+    display: inline-block;
+    width: 40%;
+    padding-top: 10px;
+    margin-left:10px;
+
+      @include medium {
+        width: 370px;
+      }
   }
 
   .fixed-top {
@@ -123,21 +141,8 @@ $header-bg-image: url(/assets/shared/bgImage.png);
      border: 0;
   }
 
-  // nav ul{list-style: none; float: right!important;}
-  // nav ul li{ margin-left: 20px}
   
   /* Header/fisrt page */
-  #top {
-    background-image: $header-bg-image;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color: transparent;
-  }
   .row {
     margin: 0
   }

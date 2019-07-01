@@ -2,55 +2,51 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header" #nav [@NavBgState]="navBgActiveState">
-      <!-- <button type="button" class="navbar-toggle collapsed" (click)="toggleNav()" data-toggle="collapse" aria-expanded="false" aria-controls="navbar"> -->
-      <button type="button" class="navbar-toggle collapsed" (click)="toggleNav()">
+      <button type="button" class="nav-toggle collapsed" (click)="toggleNav()">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" [routerLink]="['/']"><img src="assets/shared/logo1.png" alt="Ma'Leon &amp; Co"
-          class="img-responsive"></a>
+      <a class="nav-brand" [routerLink]="['/']"><img src="assets/shared/logo1.svg" alt="Ma'Leon &amp; Co" class="img-responsive"></a>
     </div>
 
-    <div id="navbar" class="navbar-collapse collapse" [ngStyle]="{display: showMobileNav}">
+    <div id="navbar" class="" [ngStyle]="{display: showMobileNav}">
       <ul class="nav navbar-right" id='navbar-ul' [@ulState]="defaultNavState">
         <li class="nav-item">
-          <a class="nav-link" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" href="#services">Services</a>
+          <p (click)="scrollTo('services')" class="nav-link">Services</p>
         </li>
         <li class="nav-item">
-          <a pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" class="nav-link" href="#contact">Contact</a>
+          <p (click)="scrollTo('contact')" class="nav-link">Contact</p>
         </li>
         <li class="nav-item nav-last">
-          <a class="nav-link" pageScroll [pageScrollAdjustHash]="true" [pageScrollOffset]="50" href="#social">Social</a>
+          <p (click)="scrollTo('social')" class="nav-link">Social</p>
         </li>
-        <li class="nav-item s-link" data-toggle="collapse" data-target="#navbar">
-          <a [routerLink]="['/about']" class="nav-link">About</a>
+        <li class="nav-item s-link" data-target="#navbar">
+          <p (click)="toggleNav()" [routerLink]="['/about']" class="nav-link">About</p>
         </li>
       </ul>
 
-      <ul class="nav navbar-right" id='navbar-ul-services' [@ulState]="servicesNavState"
-        [ngStyle]="{display: showMobileNav}">
+      <ul class="nav navbar-right" id='navbar-ul-services' [@ulState]="servicesNavState">
         <li class="nav-item nav-last">
-          <a [routerLink]="['/legals']" routerLinkActive="is-active" class="nav-link">Ts and Cs</a>
-
+          <p [routerLink]="['/legals']" (click)="toggleNav()" routerLinkActive="is-active" class="nav-link">Ts and Cs</p>
         </li>
         <li class="nav-item nav-last">
-          <a [routerLink]="['/consultancy']" routerLinkActive="is-active" class="nav-link">Consultancy</a>
+          <p [routerLink]="['/consultancy']" (click)="toggleNav()" routerLinkActive="is-active" class="nav-link">Consultancy</p>
         </li>
         <li class="nav-item">
-          <a [routerLink]="['/accountancy']" class="nav-link" routerLinkActive="is-active">Accountancy</a>
+          <p [routerLink]="['/accountancy']" class="nav-link" (click)="toggleNav()" routerLinkActive="is-active">Accountancy</p>
         </li>
 
         <li class="nav-item">
-          <a [routerLink]="['/taxation']" routerLinkActive="is-active" class="nav-link">Taxation</a>
+          <p [routerLink]="['/taxation']" (click)="toggleNav()" routerLinkActive="is-active" class="nav-link">Taxation</p>
         </li>
         <li class="nav-item s-link">
-          <a routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</a>
+          <p (click)="toggleNav()" routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</p>
         </li>
 
         <li class="nav-item s-link">
-          <a [routerLink]="['']" class="nav-link">Home</a>
+          <p [routerLink]="['']" class="nav-link">Home</p>
         </li>
       </ul>
     </div>

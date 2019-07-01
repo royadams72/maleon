@@ -2,18 +2,16 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT , isPlatformBrowser, isPlatformServer} from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Router, ActivatedRoute } from '@angular/router';
-import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
+import {ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-pageTitle:string;
-pageDescription:string;
+pageTitle: string;
+pageDescription: string;
   constructor(@Inject(DOCUMENT) private document: any,
-              private pageScrollService: PageScrollService,
               @Inject(PLATFORM_ID) private platformId: Object,
               private activatedRoute: ActivatedRoute,
               private title: Title,
@@ -29,9 +27,6 @@ pageDescription:string;
 
       if (isPlatformBrowser(this.platformId)) {
       // Client only code.
-        let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: this.document, scrollTarget: '.container',pageScrollOffset:100, pageScrollDuration:0});
-            this.pageScrollService.start(pageScrollInstance);
-            console.log(isPlatformBrowser(this.platformId), this.platformId)
         }
 
 }
