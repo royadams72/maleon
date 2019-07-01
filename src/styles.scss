@@ -41,6 +41,7 @@
   padding: 10px 0 80px 0;
 
 }
+
 #social{
   padding-bottom: 150px
 }
@@ -57,6 +58,7 @@
   text-align:center;
 
 }
+
 .services-item {
     display: block;
 }
@@ -68,11 +70,7 @@
 }
 
 #contact {
-
   background: url(assets/shared/bgContact.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   text-align: center;
   padding: 25px 0 40px 0;
@@ -87,9 +85,18 @@
   color: #fff;
   font-size: 2.3rem
 }
+
 /*****Social*******************************/
 .outer-status{
-  margin-bottom: 10px
+  flex: 1;
+  margin-bottom: 10px;
+  min-height: inherit;
+  width: 100%;
+
+  @include medium {
+    flex: 1;
+  }
+ 
 }
 .status .right-content{
   text-align: left;
@@ -97,13 +104,27 @@
 .status .status-image{
   text-align: center;
 }
+
 .status{
   background-color: #E7F3F7;
   border: 1px solid #88C3D3;
+  display: inline-block;
   margin:  0;
-  display: block;
-  min-height: 180px;
+  min-height: inherit;
+  min-width: 100%;  
   padding-top: 10px;
+}
+
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+
+   @include medium {
+    flex-direction: row;
+    min-height: 220px;
+    min-width: 100%;
+  }
 }
 .status p{
   margin-bottom: 0px
@@ -118,26 +139,27 @@
 }
 
 #top {
-  height: 100vh;
   background-image: $header-bg-image;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   background-color: transparent;
-  display: block
+  display: block;
+  height: 100vh;
 }
 .top-header-text-container{
   height: 100vh;
 }
 /*Services*************************************/
 .main-container{
-  margin-top:100px;
+  margin-top: 85px;
   margin-bottom: 200px;
   
+  @include medium {
+    margin-top: 115px;
+  }
+
   @include large {
       margin-bottom: 100px;
   }

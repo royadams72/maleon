@@ -10,8 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./legals.component.css']
 })
 export class LegalsComponent implements OnInit {
-  pageTitle:string;
-  pageDescription:string;
+  pageTitle: string;
+  pageDescription: string;
   public date = new Date();
   constructor(@Inject(DOCUMENT) private document: any,
               @Inject(PLATFORM_ID) private platformId: Object,

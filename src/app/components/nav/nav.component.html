@@ -8,42 +8,41 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" [routerLink]="['/']"><img src="assets/shared/logo1.png" alt="Ma'Leon &amp; Co"
-          class="img-responsive"></a>
+      <a class="nav-brand" [routerLink]="['/']"><img src="assets/shared/logo1.svg" alt="Ma'Leon &amp; Co" class="img-responsive"></a>
     </div>
 
     <div id="navbar" class="" [ngStyle]="{display: showMobileNav}">
-      <ul class="nav navbar-right" id='navbar-ul' [@ulState]="defaultNavState" [ngStyle]="{display: showMobileNav}">
+      <ul class="nav navbar-right" id='navbar-ul' [@ulState]="defaultNavState">
         <li class="nav-item">
-          <p (click)="scrollTo('services', 20)" class="nav-link">Services</p>
+          <p (click)="scrollTo('services')" class="nav-link">Services</p>
         </li>
         <li class="nav-item">
-          <p  (click)="scrollTo('contact')" class="nav-link">Contact</p>
+          <p (click)="scrollTo('contact')" class="nav-link">Contact</p>
         </li>
         <li class="nav-item nav-last">
           <p (click)="scrollTo('social')" class="nav-link">Social</p>
         </li>
-        <li class="nav-item s-link" data-toggle="collapse" data-target="#navbar">
-          <p [routerLink]="['/about']" class="nav-link">About</p>
+        <li class="nav-item s-link" data-target="#navbar">
+          <p (click)="toggleNav()" [routerLink]="['/about']" class="nav-link">About</p>
         </li>
       </ul>
 
-      <ul class="nav navbar-right" id='navbar-ul-services' [@ulState]="servicesNavState" [ngStyle]="{display: showMobileNav}">
+      <ul class="nav navbar-right" id='navbar-ul-services' [@ulState]="servicesNavState">
         <li class="nav-item nav-last">
-          <p [routerLink]="['/legals']" routerLinkActive="is-active" class="nav-link">Ts and Cs</p>
+          <p [routerLink]="['/legals']" (click)="toggleNav()" routerLinkActive="is-active" class="nav-link">Ts and Cs</p>
         </li>
         <li class="nav-item nav-last">
-          <p [routerLink]="['/consultancy']" routerLinkActive="is-active" class="nav-link">Consultancy</p>
+          <p [routerLink]="['/consultancy']" (click)="toggleNav()" routerLinkActive="is-active" class="nav-link">Consultancy</p>
         </li>
         <li class="nav-item">
-          <p [routerLink]="['/accountancy']" class="nav-link" routerLinkActive="is-active">Accountancy</p>
+          <p [routerLink]="['/accountancy']" class="nav-link" (click)="toggleNav()" routerLinkActive="is-active">Accountancy</p>
         </li>
 
         <li class="nav-item">
-          <p [routerLink]="['/taxation']" routerLinkActive="is-active" class="nav-link">Taxation</p>
+          <p [routerLink]="['/taxation']" (click)="toggleNav()" routerLinkActive="is-active" class="nav-link">Taxation</p>
         </li>
         <li class="nav-item s-link">
-          <p routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</p>
+          <p (click)="toggleNav()" routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</p>
         </li>
 
         <li class="nav-item s-link">

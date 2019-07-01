@@ -27,7 +27,8 @@ export class NavComponent implements AfterViewInit {
   public servicesNavState = 'inActive';
   public defaultNavState = 'active';
   private homePageActive = false;
-  private padding = 30;
+  private padding = 60;
+  private isMobileView: boolean;
   private toggledFromButtonClick = false;
   theWinHeight: number;
   scrollY: number;
@@ -105,8 +106,10 @@ export class NavComponent implements AfterViewInit {
       if (winWidth > 780) {
         this.showMobileNav = 'block';
         this.toggledFromButtonClick = false;
+        this.isMobileView = false;
       } else if (winWidth < 780 && !this.toggledFromButtonClick) {
         this.showMobileNav = 'none';
+        this.isMobileView = true;
       }
     });
   }
@@ -114,6 +117,7 @@ export class NavComponent implements AfterViewInit {
   private setNavOnLoad(): void {
     const winWidth = this.windowRef.nativeWindow.innerWidth;
     if (winWidth <= 780) {
+      this.isMobileView = true;
       this.showMobileNav = 'none';
     }
   }
@@ -135,22 +139,29 @@ export class NavComponent implements AfterViewInit {
   }
 
   public toggleNav() {
-    this.toggledFromButtonClick = !this.toggledFromButtonClick;
-    this.showMobileNav === 'none' ? this.showMobileNav = 'block' : this.showMobileNav = 'none';
+    if (this.isMobileView) {
+      this.toggledFromButtonClick = !this.toggledFromButtonClick;
+      this.showMobileNav === 'none' ? this.showMobileNav = 'block' : this.showMobileNav = 'none';
+    }
   }
+private setOffsetForScrollTargets(target: string): number {
+  const targetOffsets = {contact: 30, services: 45, social: 20};
+  return !targetOffsets[target] ? 0 : targetOffsets[target];
+}
 
-  public scrollTo(target: string, offset: number = 0): void {
-    
+  private scrollTo(target: string, offset = this.setOffsetForScrollTargets(target)): void {
     if (isPlatformBrowser(this.platformId)) {
-      const t = setTimeout(() => {
-        if (target.indexOf('/') !== -1) {
-          target = `${target.replace('/', '')}`;
-        }
-        this.scrollService.scrollToEl(target, offset);
-        // this.toggleNav();
-        // this.showMobileNav = 'none';
-        clearTimeout(t);
-      }, 100)
+      target = `${target.replace('/', '')}`;
+      if (target !== '' ) {
+        const t = setTimeout(() => {
+          this.scrollService.scrollToEl(target, offset);
+          clearTimeout(t);
+        }, 100)
+      }
+      if (this.isMobileView) {
+        this.showMobileNav = 'none';
+      }
+
     }
   }
 }
