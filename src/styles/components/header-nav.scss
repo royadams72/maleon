@@ -72,6 +72,7 @@ $header-bg-image: url(/assets/shared/bgImage.png);
   @include medium {
     display: none;
   }
+  &:focus {outline:0;}
 }
   .nav-bar {
     background-color: #6CA6C1!important
