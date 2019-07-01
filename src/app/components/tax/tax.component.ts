@@ -10,7 +10,7 @@ import { ScrollService } from 'app/services/scroll.service';
   templateUrl: './tax.component.html',
   styleUrls: ['./tax.component.css']
 })
-export class TaxComponent implements OnInit{
+export class TaxComponent implements OnInit {
   pageTitle: string;
   pageDescription: string;
   constructor(@Inject(DOCUMENT) private document: any,
