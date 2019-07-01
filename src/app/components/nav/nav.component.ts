@@ -115,10 +115,12 @@ export class NavComponent implements AfterViewInit {
   }
 
   private setNavOnLoad(): void {
-    const winWidth = this.windowRef.nativeWindow.innerWidth;
-    if (winWidth <= 780) {
-      this.isMobileView = true;
-      this.showMobileNav = 'none';
+    if (isPlatformBrowser(this.platformId)) {
+      const winWidth = this.windowRef.nativeWindow.innerWidth;
+      if (winWidth <= 780) {
+        this.isMobileView = true;
+        this.showMobileNav = 'none';
+      }
     }
   }
 
@@ -144,24 +146,25 @@ export class NavComponent implements AfterViewInit {
       this.showMobileNav === 'none' ? this.showMobileNav = 'block' : this.showMobileNav = 'none';
     }
   }
-private setOffsetForScrollTargets(target: string): number {
-  const targetOffsets = {contact: 30, services: 45, social: 20};
-  return !targetOffsets[target] ? 0 : targetOffsets[target];
-}
+  private setOffsetForScrollTargets(target: string): number {
+    const targetOffsets = {contact: 30, services: 45, social: 20};
+    target = `${target.replace('/', '')}`;
+    return !targetOffsets[target] ? 0 : targetOffsets[target];
+  }
 
-  private scrollTo(target: string, offset = this.setOffsetForScrollTargets(target)): void {
-    if (isPlatformBrowser(this.platformId)) {
-      target = `${target.replace('/', '')}`;
-      if (target !== '' ) {
-        const t = setTimeout(() => {
-          this.scrollService.scrollToEl(target, offset);
-          clearTimeout(t);
-        }, 100)
-      }
-      if (this.isMobileView) {
-        this.showMobileNav = 'none';
-      }
+  scrollTo(target: string, offset = this.setOffsetForScrollTargets(target)): void {
+      if (isPlatformBrowser(this.platformId)) {
+        target = `${target.replace('/', '')}`;
+        if (target !== '' ) {
+          const t = setTimeout(() => {
+            this.scrollService.scrollToEl(target, offset);
+            clearTimeout(t);
+          }, 100)
+        }
+        if (this.isMobileView) {
+          this.showMobileNav = 'none';
+        }
 
-    }
+      }
   }
 }
