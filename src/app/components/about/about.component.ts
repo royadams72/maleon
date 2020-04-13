@@ -17,7 +17,7 @@ pageDescription: string;
               private title: Title,
               private meta: Meta) { }
 
-  ngOnInit(){
+  ngOnInit() {
       this.pageTitle = this.activatedRoute.snapshot.data.title;
       this.pageDescription = this.activatedRoute.snapshot.data.description;
       this.title.setTitle(this.pageTitle);

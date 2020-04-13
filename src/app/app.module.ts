@@ -50,7 +50,10 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     PagenotfoundComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition(
+      // this is just the name of our application
+      // configured in angular-cli.json
+      { appId: 'maleon' }),
     BrowserTransferStateModule,
     FormsModule,
     ReactiveFormsModule,
