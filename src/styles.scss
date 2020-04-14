@@ -144,15 +144,56 @@
 }
 
 #top {
-  background-image: $header-bg-image;
+  background-image:  url(/assets/shared/bgContact.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: transparent;
+  
+  .covid-info {
+    height: 100vh;
+    position: absolute;
+    top: 80px;
+
+    @include medium {
+      top: 130px;
+    }
+   
+  }
+ 
+
+  p {
+    padding: 4px 15px;
+    font-size: 1.4rem;
+    color: #FFFFFF;
+
+      @include medium {
+        font-size: 1.7rem;
+      }
+
+  }
+
+  .btn {
+    background-color: #6CA6C1;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-left: 0;
+    padding: 3px;
+
+      @include medium {
+          font-size: 1.5rem;
+          margin-left: 10px;
+      }
+
+  }
+
+
+  
+  // background-color:  rgb(8, 2, 83);
   display: block;
   height: 100vh;
 }
+
 .top-header-text-container{
   height: 100vh;
 }

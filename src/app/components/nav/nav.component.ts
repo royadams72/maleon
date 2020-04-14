@@ -53,8 +53,8 @@ export class NavComponent implements AfterViewInit {
         const homepages = page.search(/contact|services|social/);
         if (homepages !== -1 || page === '/') {
           this.homePageActive = true;
-          this.navBgActiveState = 'inActive';
-          this.switchNav('inActive', 'active');
+          this.navBgActiveState = 'active';
+          // this.switchNav('inActive', 'active');
           this.scrollTo(page);
         } else if (homepages === -1 || page !== '/') {
           this.homePageActive = false;
@@ -71,7 +71,7 @@ export class NavComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.getScrollYAndSetNavBg();
+    // this.getScrollYAndSetNavBg();
     this.getWindowHeight();
     this.setNavOnResize();
     this.setNavOnLoad();
