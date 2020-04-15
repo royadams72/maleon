@@ -45,33 +45,32 @@ export class NavComponent implements AfterViewInit {
     private el: ElementRef,
     private scrollService: ScrollService) {
 
-      if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
     // Listens for router events, checks if hash tag is present
-      this.conn = this.router.events
-        .filter(event => event instanceof NavigationEnd)// NavigationEnd is 3rd/last event fired
-        .subscribe((p) => {
-          const page = p['url'];
-          const homepages = page.search(/contact|services|social/);
-          if (homepages !== -1 || page === '/') {
-            this.homePageActive = true;
-            this.navBgActiveState = 'inActive';
-            this.switchNav('inActive', 'active');
-            this.scrollTo(page);
-          } else if (homepages === -1 || page !== '/') {
-            this.homePageActive = false;
-            this.switchNav('active', 'inActive');
-            this.navBgActiveState = 'active';
-            setTimeout(() => {
-              window.scroll(0, 0);
-            });
-          }
-        });
-      }
+    this.conn = this.router.events
+      .filter(event => event instanceof NavigationEnd)// NavigationEnd is 3rd/last event fired
+      .subscribe((p) => {
+        const page = p['url'];
+        const homepages = page.search(/contact|services|social/);
+        if (homepages !== -1 || page === '/') {
+          this.homePageActive = true;
+          this.navBgActiveState = 'active';
+          // this.switchNav('inActive', 'active');
+          this.scrollTo(page);
+        } else if (homepages === -1 || page !== '/') {
+          this.homePageActive = false;
+          this.switchNav('active', 'inActive');
+          this.navBgActiveState = 'active';
+          setTimeout(() => {
+            window.scroll(0, 0);
+          });
+        }
+      });
   }
-
+}
 
   ngAfterViewInit() {
-    this.getScrollYAndSetNavBg();
+    // this.getScrollYAndSetNavBg();
     this.getWindowHeight();
     this.setNavOnResize();
     this.setNavOnLoad();
