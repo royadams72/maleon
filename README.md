@@ -7,6 +7,7 @@ Check index file for link
 
 ## Project with prendering
 *nvm use 9.11.2*
+
 *Run npm build*
 
 There is a post build script that runs automatiaclly runs prerender code, which places all required files in a dist folder
