@@ -8,7 +8,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "node index.js",
+    "start": "ng serve",
     "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.json",
     "build": "ng build --prod && ng build --prod --app prerender --output-hashing=none",
     "postbuild": "npm run render",

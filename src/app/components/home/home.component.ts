@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   pageDescription: string;
   public theWinHeight: number;
   public theWinWidth: number;
+  isBrowser: boolean;
 
   constructor(private renderer: Renderer2,
     private winRef: WindowRef,
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private title: Title,
     private meta: Meta) {
+      this.isBrowser = isPlatformBrowser(platformId);
     if (isPlatformBrowser(this.platformId)) {
        this.theWinHeight = this.winRef.nativeWindow.innerHeight;
     }
@@ -42,10 +44,12 @@ export class HomeComponent implements OnInit {
     this.meta.addTag({ name: 'twitter:description', content: this.pageDescription });
     this.meta.addTag({ name: 'twitter:text:description', content: this.pageDescription });
     this.meta.addTag({ name: 'twitter:image', content: 'https://pbs.twimg.com/profile_images/596590359083384832/nsvzSPFT_normal.jpg' });
-    this.renderer.listen('window', 'resize', (evt) => {
-      this.theWinHeight = this.winRef.nativeWindow.innerHeight;
-      this.theWinWidth = this.winRef.nativeWindow.innerWidth;
-    })
 
+    if (this.isBrowser) {
+        this.renderer.listen('window', 'resize', (evt) => {
+          this.theWinHeight = this.winRef.nativeWindow.innerHeight;
+          this.theWinWidth = this.winRef.nativeWindow.innerWidth;
+        })
+    }
   }
 }

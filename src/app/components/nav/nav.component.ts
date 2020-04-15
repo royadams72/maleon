@@ -45,6 +45,7 @@ export class NavComponent implements AfterViewInit {
     private el: ElementRef,
     private scrollService: ScrollService) {
 
+    if (isPlatformBrowser(this.platformId)) {
     // Listens for router events, checks if hash tag is present
     this.conn = this.router.events
       .filter(event => event instanceof NavigationEnd)// NavigationEnd is 3rd/last event fired
@@ -65,10 +66,8 @@ export class NavComponent implements AfterViewInit {
           });
         }
       });
-
-
   }
-
+}
 
   ngAfterViewInit() {
     // this.getScrollYAndSetNavBg();
@@ -78,20 +77,22 @@ export class NavComponent implements AfterViewInit {
   }
 
   private getScrollYAndSetNavBg(): void {
-    this.renderer.listen('window', 'scroll', (evt) => {
-      // Set vars to trigger animations depending on the position of window and div
-      this.scrollY = window.scrollY;
-      if (window.scrollY >= this.theWinHeight - this.padding && this.homePageActive) {
-        if (this.navBgActiveState !== 'active') {
-          this.navBgActiveState = 'active';
-        }
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.listen('window', 'scroll', (evt) => {
+        // Set vars to trigger animations depending on the position of window and div
+        this.scrollY = window.scrollY;
+        if (window.scrollY >= this.theWinHeight - this.padding && this.homePageActive) {
+          if (this.navBgActiveState !== 'active') {
+            this.navBgActiveState = 'active';
+          }
 
-      } else if (window.scrollY <= this.theWinHeight - this.padding && this.homePageActive) {
-        if (this.navBgActiveState !== 'inActive') {
-          this.navBgActiveState = 'inActive'
+        } else if (window.scrollY <= this.theWinHeight - this.padding && this.homePageActive) {
+          if (this.navBgActiveState !== 'inActive') {
+            this.navBgActiveState = 'inActive'
+          }
         }
-      }
-    });
+      });
+    }
   }
 
   getWindowHeight(): void {
@@ -101,17 +102,19 @@ export class NavComponent implements AfterViewInit {
   }
 
   setNavOnResize() {
-    this.renderer.listen('window', 'resize', (evt) => {
-      const winWidth = evt.currentTarget.innerWidth;
-      if (winWidth > 780) {
-        this.showMobileNav = 'block';
-        this.toggledFromButtonClick = false;
-        this.isMobileView = false;
-      } else if (winWidth < 780 && !this.toggledFromButtonClick) {
-        this.showMobileNav = 'none';
-        this.isMobileView = true;
-      }
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.listen('window', 'resize', (evt) => {
+        const winWidth = evt.currentTarget.innerWidth;
+        if (winWidth > 780) {
+          this.showMobileNav = 'block';
+          this.toggledFromButtonClick = false;
+          this.isMobileView = false;
+        } else if (winWidth < 780 && !this.toggledFromButtonClick) {
+          this.showMobileNav = 'none';
+          this.isMobileView = true;
+        }
+      });
+    }
   }
 
   private setNavOnLoad(): void {
