@@ -37,7 +37,7 @@
     "core-js": "^2.5.3",
     "emailjs": "^1.0.10",
     "express": "^4.15.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "linkify": "^0.2.1",
     "linkifyjs": "^2.1.6",
     "ng2-bootstrap": "^1.6.3",
