@@ -55,7 +55,7 @@ export class NavComponent implements AfterViewInit {
         if (homepages !== -1 || page === '/') {
           this.homePageActive = true;
           this.navBgActiveState = 'active';
-          // this.switchNav('inActive', 'active');
+          this.switchNav('inActive', 'active');
           this.scrollTo(page);
         } else if (homepages === -1 || page !== '/') {
           this.homePageActive = false;
