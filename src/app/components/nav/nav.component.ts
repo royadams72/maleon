@@ -155,6 +155,10 @@ export class NavComponent implements AfterViewInit {
     return !targetOffsets[target] ? 0 : targetOffsets[target];
   }
 
+  goToClientArea(): void {
+    this.router.navigate(['/client-area.html'], { queryParams: { page: this.router.url } });
+  }
+
   scrollTo(target: string, offset = this.setOffsetForScrollTargets(target)): void {
       if (isPlatformBrowser(this.platformId)) {
         target = `${target.replace('/', '')}`;
