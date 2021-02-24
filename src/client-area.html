@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ma-Leon &amp; Co, Bookkeeping &amp; Accounting Service</title>
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico"><link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"><link href="styles.f05140594ecf1f662c65.bundle.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var page = urlParams.toString().split('=')[1];
+    setTimeout(() => {
+        document.getElementById('backBtn').addEventListener("click", (event) => {
+            ((event) => {
+                window.location.replace('http://www.ma-leon.co.uk/' + unescape(page));
+            }).call(document.getElementById('backBtn'), event);
+        });
+    }, 100);
+  </script>
+</head>
+<body>
+  <div class="container main-container">
+    <div class="row page-header">
+
+        <div class="col-sm-4">
+            <h1>Client Area</h1>
+        </div>
+    </div>
+    <div class="row section1">
+        <div class="col-md-12">
+            <p>
+              <span class="head1">Loggin to Accountancy Manager </span>
+              <span class="btn btn-lg" id="backBtn" > << Go Back </span>
+            </p>
+            <form name="clientForm" id="clientForm" action="https://www.accountancymanager.co.uk/signin" method="post">
+              <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label for="userName">UserName</label>
+                    <input formControlName="userName" name="email" type="text" class="form-control" placeholder="UserName" id="Username" required>
+                </div>
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                  <label for="password">Password</label>
+                  <input formControlName="password" name="password" type="password" class="form-control" placeholder="password" id="Password" required>
+              </div>
+              <div class="row">
+                <div class="form-group col-xs-12">
+                    <button name="submit" type="submit" class="btn btn-lg">Login</button>
+                </div>
+             </div>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

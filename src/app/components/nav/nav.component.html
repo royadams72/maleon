@@ -23,6 +23,9 @@
           <p (click)="scrollTo('social')" class="nav-link">Social</p>
         </li>
         <li class="nav-item s-link" data-target="#navbar">
+          <p (click)="goToClientArea()" class="nav-link">Client Area</p>
+        </li>
+        <li class="nav-item s-link" data-target="#navbar">
           <p (click)="toggleNav()" [routerLink]="['/about']" class="nav-link">About</p>
         </li>
       </ul>
@@ -44,7 +47,10 @@
         <li class="nav-item s-link">
           <p (click)="toggleNav()" routerLinkActive="is-active" [routerLink]="['/about']" class="nav-link">About</p>
         </li>
-
+        <li class="nav-item s-link">
+          <!-- <a (click)="toggleNav()" href="http://ma-leon.co.uk/client-area.html" class="nav-link">Client Area</a> -->
+          <p (click)="goToClientArea()" routerLinkActive="is-active" class="nav-link">Client Area</p>
+        </li>
         <li class="nav-item s-link">
           <p [routerLink]="['']" class="nav-link">Home</p>
         </li>
