@@ -36,7 +36,7 @@
     "bootstrap": "^3.4.1",
     "core-js": "^2.5.3",
     "emailjs": "^1.0.10",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "jquery": "^3.4.1",
     "linkify": "^0.2.1",
     "linkifyjs": "^2.1.6",
